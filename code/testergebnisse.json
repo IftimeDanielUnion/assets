@@ -1,0 +1,105 @@
+{
+  "patch_tests": [
+    {
+      "environment": "dev",
+      "apply_check": "passed",
+      "apply_exact_content": "passed",
+      "reverse_original_bytes": "passed",
+      "enabled": true
+    },
+    {
+      "environment": "test",
+      "apply_check": "passed",
+      "apply_exact_content": "passed",
+      "reverse_original_bytes": "passed",
+      "enabled": true
+    },
+    {
+      "environment": "prod",
+      "apply_check": "passed",
+      "apply_exact_content": "passed",
+      "reverse_original_bytes": "passed",
+      "enabled": false
+    }
+  ],
+  "public_key": {
+    "type": "RSA",
+    "bits": 4096,
+    "sha256_fingerprint": "SHA256:dnNfJ61wYm8HJzH+x+DLgIvcREFPbmZUXdMVjJPvXV8",
+    "matches_jira_exactly": true
+  },
+  "cloud_deployment": false,
+  "terraform_validate": false,
+  "terraform_plan": false,
+  "azure_kql_execution": false,
+  "catalog_tag_comparison": [
+    {
+      "file": "modules/log-and-monitor/main.tf",
+      "snapshot_matches_catalog_v0.13.0_after_line_ending_normalization": true
+    },
+    {
+      "file": "modules/log-and-monitor/main.alerts.tf",
+      "snapshot_matches_catalog_v0.13.0_after_line_ending_normalization": true
+    },
+    {
+      "file": "modules/log-and-monitor/variables.logs.tf",
+      "snapshot_matches_catalog_v0.13.0_after_line_ending_normalization": true
+    },
+    {
+      "file": "units/log-and-monitor/terragrunt.hcl",
+      "snapshot_matches_catalog_v0.13.0_after_line_ending_normalization": true
+    }
+  ],
+  "source_reference_checks": 20,
+  "saml_xml_parse": [
+    {
+      "file": "idp_metadata_azure.xml",
+      "parsed": true
+    },
+    {
+      "file": "ump-app_metadata.xml",
+      "parsed": true
+    }
+  ],
+  "shell_syntax_checks": [
+    {
+      "file": "05_Technik_zum_Nachschlagen.md",
+      "block": 1,
+      "bash_syntax": "passed"
+    },
+    {
+      "file": "05_Technik_zum_Nachschlagen.md",
+      "block": 2,
+      "bash_syntax": "passed"
+    },
+    {
+      "file": "05_Technik_zum_Nachschlagen.md",
+      "block": 3,
+      "bash_syntax": "passed"
+    },
+    {
+      "file": "05_Technik_zum_Nachschlagen.md",
+      "block": 4,
+      "bash_syntax": "passed"
+    },
+    {
+      "file": "code/README.md",
+      "block": 1,
+      "bash_syntax": "passed"
+    },
+    {
+      "file": "code/README.md",
+      "block": 2,
+      "bash_syntax": "passed"
+    }
+  ],
+  "package_quality_checks": {
+    "markdown_relative_links": "passed",
+    "holiday_recipients_in_message_blocks": 0,
+    "private_keys_in_package": 0,
+    "em_dash_characters": 0,
+    "message_templates": 10,
+    "embedded_python_compiles": true,
+    "patches_add_only_one_monitoring_block": true
+  }
+}

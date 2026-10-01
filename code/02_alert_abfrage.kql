@@ -1,0 +1,6 @@
+// The alert rule supplies its five-minute evaluation window.
+// Do not replace Count with a summarized row count without adjusting the rule.
+OTelLogs
+| where SeverityText in~ ("error", "fatal")
+| extend ServiceName = iff(isempty(ServiceName), "unknown-service", ServiceName)
+| project TimeGenerated, ServiceName
