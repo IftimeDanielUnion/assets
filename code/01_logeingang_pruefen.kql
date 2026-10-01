@@ -1,7 +1,0 @@
-// Run in the TEST Application Insights resource used by the monitoring module.
-// A metadata/count query: no log bodies, user data or stack traces are returned.
-OTelLogs
-| where TimeGenerated > ago(24h)
-| summarize Records = count(), Latest = max(TimeGenerated)
-    by ServiceName, SeverityText, _ResourceId
-| order by Latest desc
