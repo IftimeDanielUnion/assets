@@ -1,0 +1,18 @@
+DBI-6455
+Aktueller Stand: Die TEST-Alarmierung für error/fatal wurde im live-Repo umgesetzt und als MR erstellt. Der MR wartet aktuell auf Review. Nach Merge werden planTestEnvironment und anschließend applyTestEnvironment geprüft/ausgeführt. Danach folgt ein End-to-End-Test mit echtem Fehler und Bestätigung des Mail-Eingangs an ui-team@os-cillation.de.
+
+
+DBI-12139
+Aktueller Stand: Die benötigten Storage-/Container-Ressourcen für dev, test und prod sind bereits vorhanden. Der TEST-Abruf eines Test-Assets wurde erfolgreich geprüft. Offen ist aktuell noch der Zertifikatspunkt in DEV sowie der anschließende erneute Zugriffstest. Es ist derzeit keine neue Storage-Anlage erforderlich.
+
+
+DBI-11149
+Aktueller Stand: Der neue öffentliche RSA-Schlüssel wurde an Marc zur Hinterlegung bei Lukas geschickt. Das Ticket wartet aktuell auf die Bestätigung, dass der Schlüssel hinterlegt wurde. Danach wird die SFTP-Anmeldung aus dem echten UMP-Laufzeitkontext getestet und anschließend ein sicherer Anwendungstest durchgeführt.
+
+
+PB2B-27849
+Aktueller Stand: Oliver hat bestätigt, dass der Login über die temporäre App wieder zur UMP zurückführt und die grundlegende SAML-/Mellon-Integration damit vorhanden ist. Offen ist nur noch ein bestätigter Login-Test bzw. Testbeleg für die temporäre Instanz. Wenn dieser erfolgreich ist, sollte kein weiterer Code-Change notwendig sein.
+
+
+DBI-7161
+Aktueller Stand: Ein technischer Infrastrukturentwurf für Event Grid ist vorbereitet, aber noch nicht eingebunden. Vor der Umsetzung müssen noch Event-Schema, UMP-Empfänger, Authentifizierung und Zuständigkeiten für Sender/Empfänger mit Sinan/OSC geklärt werden. Bis dahin erfolgt noch kein Deployment.
