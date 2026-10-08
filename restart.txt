@@ -1,0 +1,3 @@
+ah okay, wenn die bestehende Freischaltung damals unter UNIONMARKETINGPLATTFORM angelegt wurde, dann ist das natürlich so in Ordnung und sollte entsprechend wie bisher weitergeführt werden.
+Ich mache aktuell nur die Vertretung für die Kollegen im Urlaub und kannte die ursprüngliche Zuordnung daher nicht im Detail. Danke fürs Gegenprüfen.
+Wenn die bestehende Regel aus CTASK0105899 die passende Source enthält, würde ich dort einfach ftp81.msu.biz zusätzlich aufnehmen und lukaspartner.msu.biz vorerst bestehen lassen.
