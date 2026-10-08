@@ -1,3 +1,39 @@
-ah okay, wenn die bestehende Freischaltung damals unter UNIONMARKETINGPLATTFORM angelegt wurde, dann ist das natürlich so in Ordnung und sollte entsprechend wie bisher weitergeführt werden.
-Ich mache aktuell nur die Vertretung für die Kollegen im Urlaub und kannte die ursprüngliche Zuordnung daher nicht im Detail. Danke fürs Gegenprüfen.
-Wenn die bestehende Regel aus CTASK0105899 die passende Source enthält, würde ich dort einfach ftp81.msu.biz zusätzlich aufnehmen und lukaspartner.msu.biz vorerst bestehen lassen.
+So würde ich Jens schreiben:
+
+> Hi Jens,
+
+danke, verstanden. Ich mache aktuell nur die Vertretung für die Kollegen im Urlaub und hatte die ursprüngliche Zuordnung daher nicht im Detail.
+
+Wenn die bestehende Freischaltung aus CTASK0105899 unter UNIONMARKETINGPLATTFORM angelegt wurde, würde ich mich technisch an dieser bestehenden Regel orientieren. Ziel wäre, für dieselbe Source/EPG zusätzlich ftp81.msu.biz auf TCP/22 freizuschalten und lukaspartner.msu.biz vorerst bestehen zu lassen.
+
+Kannst du mir kurz sagen, ob wir den aktuellen Change entsprechend konkretisieren/kommentieren können, oder ob wegen der Zuordnung UNIONMARKETINGPLATTFORM statt MARKTBEARBEITUNG ein neuer separater Change notwendig ist?
+
+Falls der aktuelle Change angepasst werden kann, würde ich dort Quelle, Ziel und Port eindeutig nachziehen. Kannst du mir dafür bitte auch die konkrete Source/EPG aus der bestehenden Regel bzw. aus CTASK0105899 bestätigen?
+
+Danke dir!
+
+
+
+Für den ServiceNow-Kommentar im aktuellen Change würde ich bis zur Rückmeldung von Jens noch keine falsche Source eintragen, sondern so dokumentieren:
+
+Im Rahmen der Prüfung wurde die bestehende Freischaltung für den bisherigen Lukas-SFTP-Endpunkt identifiziert:
+
+CTASK0105899 - [AZURE][CORE-FIREWALL][Anlage][UNIONMARKETINGPLATTFORM][TEST & PROD][Verbindung zu Lukas]
+
+Die bestehende Freischaltung wurde offenbar unter UNIONMARKETINGPLATTFORM und nicht unter MARKTBEARBEITUNG umgesetzt.
+
+Für die aktuelle Anforderung soll der neue SFTP-Endpunkt
+
+Ziel: ftp81.msu.biz
+Port: 22
+Protokoll: TCP
+
+freigeschaltet werden.
+
+Technisch soll nach Möglichkeit dieselbe Source/EPG wie in der bestehenden Freischaltung aus CTASK0105899 verwendet werden. Der bestehende Endpunkt lukaspartner.msu.biz soll vorerst weiterhin bestehen bleiben.
+
+Aktuell erfolgt die Klärung mit dem Firewall-Team, ob der bestehende Change entsprechend konkretisiert werden kann oder aufgrund der abweichenden Zuordnung UNIONMARKETINGPLATTFORM / MARKTBEARBEITUNG ein separater Change erforderlich ist.
+
+Die konkrete Source/EPG wird nach Bestätigung durch das Firewall-Team ergänzt.
+
+Das ist sauberer, weil Jens ausdrücklich Quelle, Ziel und Port eindeutig haben möchte und wir die konkrete Source/EPG aktuell noch nicht sicher kennen.
