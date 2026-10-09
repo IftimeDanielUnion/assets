@@ -1,20 +1,20 @@
-Name:
-uai-im-action-hub-dev-identity-nsebndxo
-Application ID:
-8b7f5dc1-ecb7-4bf0-962e-9b5e1ea24bc2
-Object ID:
-be469e5e-55d1-4a5f-90a5-44895e195ffd
+Hi Julian, ich habe mir die Repos und DBI-10553 angesehen. Aus Infrastruktursicht würde ich die Queues und Topics inklusive Subscriptions und Filter im bestehenden Infrastruktur-Repo verwalten. Bestehende Ressourcen werden dabei importiert und bleiben erhalten.
 
-Name:
-uai-im-action-hub-test-identity-xrrvzhh4
-Application ID:
-fcbc9fe5-6ad7-4ebb-b4e1-91d7f5b29626
-Objec37a9d36a-fce0-40e3-a9ed-8b441c4c9448t ID:
-37a9d36a-fce0-40e3-a9ed-8b441c4c9448
+Die UMP-Berechtigungen können wir über „Azure Service Bus Data Sender“ bzw. „Data Receiver“ direkt auf den jeweiligen Queues abbilden. Die Action-Hub-Identitäten für DEV, TEST und PROD sind inzwischen geklärt. Für die externe UMP brauchen wir noch Client-ID, Object-ID des Service Principals in unserem Service-Bus-Tenant sowie die Umgebungszuordnung.
 
-Name:
-uai-im-action-hub-prod-identity-yb1umhkf
-Application ID:
-f42cfc3e-ff34-446e-b58f-93b1cdd1ede4
-Object ID74f97b38-37c0-497e-bb46-edc545e0d43e:
-74f97b38-37c0-497e-bb46-edc545e0d43e
+Ob unsere Infrastruktur-Pipeline diese Rollenzuweisungen mit ihrer aktuellen Delegation selbst setzen kann oder wir dafür CIS einbeziehen müssen, prüfe ich am Montag.
+
+Die Umstellung müssen wir mit euch abstimmen: Bevor die breiten Rechte entfallen, muss die Queue-Verwaltung aus dem App-Start heraus. Beim Zuschnitt der Rollen müssen wir außerdem die Senderechte für eure Retry-Verarbeitung berücksichtigen.
+
+Ich mache am Montag weiter. Schönes Wochenende!
+
+
+Hi Christoph, ich habe mir die DMS-Repos angesehen. Im gelieferten Code habe ich keinen Consumer für `storage_events_mb_dms` gefunden. Das passt zu deiner Beobachtung, dass daraus nicht gelesen wird.
+
+Für eine Löschentscheidung müssen wir aber noch klären, was tatsächlich in die Queue schreibt und ob sie für eine noch offene Verarbeitung der Virenscan-Ergebnisse vorgesehen ist. Im DMS-Code gibt es dazu noch offene Stellen.
+
+Ich würde die Queue deshalb vorerst bestehen lassen und die Frage separat von der Migration unserer eigenen Queues behandeln. Am Montag schaue ich mir die Azure-Konfiguration dazu an und kläre den vorgesehenen Ablauf mit den Evolutionären.
+
+Falls du von Jörn/Massimo schon die Angaben zum UMP-Service-Principal bekommen hast, schick sie mir bitte für die weitere Planung.
+
+Ich mache am Montag weiter. Schönes Wochenende!
