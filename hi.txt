@@ -1,3 +1,0 @@
-Hi Timo, danke fürs Taggen! 😊
-
-Kurze Frage für die Zukunft: Soll ich nach dem Merge eines Catalog-MRs die Versions-Tags selbst erstellen, oder macht ihr das normalerweise zentral? Technisch kann ich das übernehmen, ich würde nur gerne wissen, wie ihr die Versionsnummern und Freigaben handhabt.
