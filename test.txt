@@ -1,55 +1,20 @@
-Ja, ich würde Timo kurz fragen. Technisch kannst du Tags problemlos selbst erstellen. Du solltest nur klären, ob ihr dafür eine feste Versionierungs- und Freigaberegel habt.
+Name:
+uai-im-action-hub-dev-identity-nsebndxo
+Application ID:
+8b7f5dc1-ecb7-4bf0-962e-9b5e1ea24bc2
+Object ID:
+be469e5e-55d1-4a5f-90a5-44895e195ffd
 
-### Nachricht an Timo
+Name:
+uai-im-action-hub-test-identity-xrrvzhh4
+Application ID:
+fcbc9fe5-6ad7-4ebb-b4e1-91d7f5b29626
+Objec37a9d36a-fce0-40e3-a9ed-8b441c4c9448t ID:
+37a9d36a-fce0-40e3-a9ed-8b441c4c9448
 
-Hi Timo, danke fürs Taggen! 😊
-
-Kurze Frage für die Zukunft: Soll ich nach dem Merge eines Catalog-MRs die Versions-Tags selbst erstellen, oder macht ihr das normalerweise zentral? Technisch kann ich das übernehmen, ich würde nur gerne wissen, wie ihr die Versionsnummern und Freigaben handhabt.
-
-## So erstellst du einen Tag selbst
-
-Am einfachsten direkt in GitLab:
-
-1. `catalog`-Repository öffnen.
-2. Code → Tags → New tag auswählen.
-3. Neue Versionsnummer eingeben, beispielsweise `v0.13.2`.
-4. Unter Create from den gemergten Commit aus `main` auswählen.
-5. Create tag klicken.
-
-Das geht auch über dein WSL-Terminal:
-
-```
-cd ~/repos/catalog
-
-git switch main
-git pull --ff-only origin main
-
-git tag -a v0.13.2 -m "Release v0.13.2"
-git push origin v0.13.2
-```
-
-Der neue Tag zeigt dann auf den aktuellen lokalen `main`-Commit.&#x20;
-
-[image](https://www.google.com/s2/favicons?domain=https://docs.gitlab.com\&sz=32)
-
-GitLab Docs
-
-
-
-Wichtig für euren Workflow:
-
-- Immer erst den Catalog-MR mergen, dann taggen.
-- Versionsnummer mit den bisherigen Tags abstimmen.
-- Den Tag auf den richtigen Merge-Commit setzen.
-- Anschließend im `live`-Repo `tg_catalog_version` auf die neue Version aktualisieren.
-- Vor dem Merge in `live` den Terraform-Plan prüfen.
-
-Tags können geschützt sein oder eigene Pipelines auslösen. Deshalb ist die kurze Abstimmung mit Timo sinnvoll.&#x20;
-
-[image](https://www.google.com/s2/favicons?domain=https://docs.gitlab.com\&sz=32)
-
-GitLab Docs
-
-
-
-Für DBI-6455 brauchst du nichts mehr zu taggen. Timo hat `v0.13.1` bereits erstellt.
+Name:
+uai-im-action-hub-prod-identity-yb1umhkf
+Application ID:
+f42cfc3e-ff34-446e-b58f-93b1cdd1ede4
+Object ID74f97b38-37c0-497e-bb46-edc545e0d43e:
+74f97b38-37c0-497e-bb46-edc545e0d43e
