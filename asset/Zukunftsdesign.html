@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Release-Governance — Detailsicht</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@500;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap');
+:root{
+  --ink:#1C2430; --paper:#FFFFFF;
+  --green:#1E8A4C; --green-bg:#E3F2E9;
+  --amber:#E89B0C; --amber-dk:#B97900; --amber-bg:#FCF0D8;
+  --blue:#1F4E79;  --blue-bg:#E4EDF6;
+  --line:#D8DCE3;
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+body{background:#EDEFF2; font-family:'Public Sans',sans-serif; color:var(--ink); padding:32px 18px;}
+.frame{max-width:1520px; margin:0 auto; background:var(--paper); border-radius:18px; padding:34px 34px 26px; box-shadow:0 6px 24px rgba(28,36,48,.10);}
+
+.head{text-align:center; margin-bottom:18px;}
+.head .eyebrow{font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.2em; color:#7B8494; margin-bottom:6px;}
+.head h1{font-size:32px; font-weight:800; letter-spacing:-.01em;}
+
+.roles{display:grid; grid-template-columns:1fr 1fr 1fr; border:1.5px solid var(--line); border-radius:12px; overflow:hidden; margin-bottom:18px;}
+.roles .r{padding:12px 20px; border-right:1.5px solid var(--line); text-align:center;}
+.roles .r:last-child{border-right:none;}
+.roles .k{font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.14em; color:#7B8494; margin-bottom:2px;}
+.roles .v{font-size:17px; font-weight:800;}
+.roles .v.g{color:var(--green);} .roles .v.a{color:var(--amber-dk);} .roles .v.b{color:var(--blue);}
+
+.scene svg{display:block; width:100%; height:auto; border-radius:12px;}
+
+.rules{display:grid; grid-template-columns:repeat(4,1fr); margin-top:18px; border-top:1.5px solid var(--line); padding-top:16px;}
+.rule{padding:6px 18px; border-right:1px solid var(--line);}
+.rule:last-child{border-right:none;}
+.rule h3{font-size:16.5px; font-weight:800; margin-bottom:3px;}
+.rule h3.g{color:var(--green);} .rule h3.a{color:var(--amber-dk);} .rule h3.b{color:var(--blue);} .rule h3.i{color:var(--ink);}
+.rule p{font-size:13px; font-weight:500; line-height:1.45; color:#3A4350;}
+
+.foot{margin-top:16px; text-align:center; font-size:13px; font-weight:500; color:#7B8494; letter-spacing:.03em;}
+
+@media (max-width:900px){
+  .roles{grid-template-columns:1fr;}
+  .roles .r{border-right:none; border-bottom:1.5px solid var(--line);}
+  .roles .r:last-child{border-bottom:none;}
+  .rules{grid-template-columns:1fr 1fr;}
+  .rule:nth-child(2){border-right:none;}
+}
+@media print{ body{background:#fff; padding:0;} .frame{box-shadow:none; max-width:none;} }
+</style>
+</head>
+<body>
+<div class="frame">
+
+  <div class="head">
+    <div class="eyebrow">RELEASE-GOVERNANCE · DETAILSICHT</div>
+    <h1>Ein Team — getrennte Bereiche — ein kontrollierter Übergang</h1>
+  </div>
+
+  <div class="roles">
+    <div class="r"><div class="k">ENTWICKLUNG</div><div class="v g">Workload-Entwickler — in beiden Gruppen</div></div>
+    <div class="r"><div class="k">PRÜFUNG &amp; MERGE</div><div class="v a">Vier-Augen-Prinzip · nie der eigene MR</div></div>
+    <div class="r"><div class="k">GENEHMIGUNG</div><div class="v b">Change-Management · ServiceNow</div></div>
+  </div>
+
+  <div class="scene">
+  <svg id="scene" viewBox="0 0 1440 660" role="img" aria-label="Detailsicht: Entwicklung, Prüfung, Test und Prod">
+    <defs>
+      <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+        <path d="M0,0 L10,5 L0,10 z" fill="#1C2430"/>
+      </marker>
+      <marker id="arrg" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+        <path d="M0,0 L10,5 L0,10 z" fill="#1E8A4C"/>
+      </marker>
+      <marker id="arra" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+        <path d="M0,0 L10,5 L0,10 z" fill="#B97900"/>
+      </marker>
+    </defs>
+
+    <!-- Zonen -->
+    <rect x="0" y="0" width="560" height="660" fill="#E3F2E9"/>
+    <rect x="560" y="0" width="320" height="660" fill="#FCF0D8"/>
+    <rect x="880" y="0" width="560" height="660" fill="#E4EDF6"/>
+
+    <!-- Zonen-Titel -->
+    <text x="24" y="44" font-family="'Public Sans',sans-serif" font-weight="800" font-size="26" fill="#1E8A4C">ENTWICKLUNG</text>
+    <text x="24" y="66" font-family="'IBM Plex Mono',monospace" font-size="12" fill="#3F7A57">frei · changebefreit</text>
+
+    <text x="720" y="44" text-anchor="middle" font-family="'Public Sans',sans-serif" font-weight="800" font-size="26" fill="#B97900">PRÜFUNG</text>
+    <text x="720" y="66" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="12" fill="#9A6A10">der kontrollierte Übergang</text>
+
+    <text x="1416" y="44" text-anchor="end" font-family="'Public Sans',sans-serif" font-weight="800" font-size="26" fill="#1F4E79">TEST &amp; PROD</text>
+    <text x="1416" y="66" text-anchor="end" font-family="'IBM Plex Mono',monospace" font-size="12" fill="#41618B">geschützt · changepflichtig</text>
+
+    <!-- Deploy-Weg -->
+    <rect x="560" y="505" width="880" height="52" fill="#EFE3C2"/>
+    <rect x="880" y="505" width="560" height="52" fill="#D3E0EE"/>
+    <line x1="575" y1="531" x2="1432" y2="531" stroke="#FFFFFF" stroke-width="3" stroke-dasharray="22 16"/>
+
+    <!-- Klammer: dieselben Entwickler -->
+    <path d="M44 166 L32 166 L32 436 L44 436" fill="none" stroke="#1E8A4C" stroke-width="2.4" stroke-dasharray="6 5"/>
+    <text x="21" y="301" font-family="'IBM Plex Mono',monospace" font-size="10.5" fill="#1E8A4C" transform="rotate(-90 21 301)" text-anchor="middle">DIESELBEN ENTWICKLER</text>
+
+    <!-- ================= BUILD-GRUPPE ================= -->
+    <g>
+      <rect x="60" y="150" width="214" height="104" rx="12" fill="#FFFFFF" stroke="#1E8A4C" stroke-width="2.6"/>
+      <text x="167" y="192" text-anchor="middle" font-family="'Public Sans',sans-serif" font-weight="800" font-size="21" fill="#1C2430">Build-Gruppe</text>
+      <text x="167" y="216" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="11.5" fill="#3F7A57">Quellcode · CI-Pipelines</text>
+      <text x="167" y="234" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="11.5" fill="#3F7A57">baut &amp; testet Artefakte</text>
+    </g>
+
+    <!-- ================= INFRA-GRUPPE (FEATURE-BRANCHES) ================= -->
+    <g>
+      <rect x="60" y="352" width="214" height="118" rx="12" fill="#FFFFFF" stroke="#1E8A4C" stroke-width="2.6" stroke-dasharray="9 6"/>
+      <text x="167" y="392" text-anchor="middle" font-family="'Public Sans',sans-serif" font-weight="800" font-size="21" fill="#1C2430">Infra-Gruppe</text>
+      <text x="167" y="414" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="11.5" fill="#3F7A57">Feature-Branches</text>
+      <text x="167" y="432" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="11.5" fill="#3F7A57">Terraform · Terragrunt</text>
+      <text x="167" y="454" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="10.5" fill="#9A6A10">frei bis zum Merge</text>
+    </g>
+
+    <!-- ================= DEV ================= -->
+    <g>
+      <rect x="358" y="416" width="164" height="96" rx="12" fill="#1E8A4C"/>
+      <text x="440" y="458" text-anchor="middle" font-family="'Public Sans',sans-serif" font-weight="800" font-size="27" fill="#FFFFFF">DEV</text>
+      <text x="440" y="482" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="11" fill="#D7EFE0">Auto-Deploy · sofort</text>
+      <text x="440" y="546" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="11" fill="#3F7A57">ohne Gate · aus candidates</text>
+    </g>
+
+    <!-- Pfeil Infra -> Dev -->
+    <path d="M278 428 L318 428 L318 464 L348 464" fill="none" stroke="#1E8A4C" stroke-width="3.2" marker-end="url(#arrg)"/>
+
+    <!-- Pfeil Build -> Nexus -->
+    <path d="M278 194 L590 194" fill="none" stroke="#1C2430" stroke-width="3.2" marker-end="url(#arr)"/>
+    <text x="430" y="180" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="11.5" fill="#1C2430">Artefakt publizieren</text>
+    <text x="430" y="216" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="10.5" fill="#6E7684">versioniert · Digest</text>
+
+    <!-- Pfeil Infra -> Review -->
+    <path d="M278 386 L588 386" fill="none" stroke="#B97900" stroke-width="3.2" marker-end="url(#arra)"/>
+    <text x="430" y="356" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="11.5" fill="#B97900">Merge Request</text>
+    <text x="430" y="373" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="10.5" fill="#9A6A10">Version-Bump + Change-Nr.</text>
+
+    <!-- ================= NEXUS ================= -->
+    <g>
+      <rect x="600" y="126" width="252" height="24" rx="6" fill="#1C2430"/>
+      <text x="726" y="143" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-weight="500" font-size="14" fill="#FFFFFF" letter-spacing="2">NEXUS · ARTEFAKTE</text>
+      <rect x="600" y="150" width="252" height="140" fill="#FFFFFF" stroke="#1C2430" stroke-width="2.4"/>
+      <line x1="726" y1="150" x2="726" y2="290" stroke="#1C2430" stroke-width="2.4" stroke-dasharray="7 5"/>
+      <text x="663" y="180" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="11.5" fill="#6E7684">candidates</text>
+      <rect x="626" y="196" width="74" height="16" rx="4" fill="#E3F2E9" stroke="#1E8A4C" stroke-width="1.8"/>
+      <rect x="626" y="222" width="74" height="16" rx="4" fill="#E3F2E9" stroke="#1E8A4C" stroke-width="1.8"/>
+      <rect x="626" y="248" width="74" height="16" rx="4" fill="#E3F2E9" stroke="#1E8A4C" stroke-width="1.8"/>
+      <text x="663" y="280" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="10" fill="#3F7A57">beliebig viele Builds</text>
+      <text x="789" y="180" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="11.5" fill="#1F4E79">releases</text>
+      <rect x="752" y="196" width="74" height="16" rx="4" fill="#E4EDF6" stroke="#1F4E79" stroke-width="1.8"/>
+      <rect x="752" y="222" width="74" height="16" rx="4" fill="#E4EDF6" stroke="#1F4E79" stroke-width="1.8"/>
+      <rect x="752" y="248" width="74" height="16" rx="4" fill="#E4EDF6" stroke="#1F4E79" stroke-width="1.8"/>
+      <text x="789" y="280" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="10" fill="#41618B">unveränderlich</text>
+    </g>
+
+    <!-- Promotion-Badge -->
+    <g transform="translate(726 352)">
+      <circle r="27" fill="#FFFFFF" stroke="#E89B0C" stroke-width="3"/>
+      <text y="-2" text-anchor="middle" font-family="'Public Sans',sans-serif" font-weight="800" font-size="11.5" fill="#B97900">PROMOTION</text>
+      <text y="13" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="8" fill="#B97900">nach Genehmigung</text>
+    </g>
+    <path d="M726 321 L726 296" fill="none" stroke="#B97900" stroke-width="2.6" marker-end="url(#arra)" stroke-dasharray="5 4"/>
+
+    <!-- ================= CHANGE ================= -->
+    <g>
+      <rect x="596" y="340" width="62" height="80" rx="4" fill="#FFFFFF" stroke="#1C2430" stroke-width="2.2"/>
+      <line x1="606" y1="356" x2="648" y2="356" stroke="#C3C9D2" stroke-width="2.5"/>
+      <line x1="606" y1="370" x2="648" y2="370" stroke="#C3C9D2" stroke-width="2.5"/>
+      <line x1="606" y1="384" x2="634" y2="384" stroke="#C3C9D2" stroke-width="2.5"/>
+      <g transform="rotate(-12 644 406)">
+        <circle cx="644" cy="406" r="17" fill="#FFFFFF" stroke="#1E8A4C" stroke-width="2.4"/>
+        <text x="644" y="411" text-anchor="middle" font-family="'Public Sans',sans-serif" font-weight="800" font-size="9" fill="#1E8A4C">GENEHMIGT</text>
+      </g>
+      <text x="627" y="446" text-anchor="middle" font-family="'Public Sans',sans-serif" font-weight="800" font-size="16" fill="#1C2430">CHANGE</text>
+      <text x="627" y="464" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="10" fill="#6E7684">ServiceNow</text>
+      <text x="627" y="480" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="10" fill="#6E7684">Gate in der Pipeline</text>
+    </g>
+
+    <!-- ================= MERGE / PRÜFER ================= -->
+    <g>
+      <rect x="686" y="404" width="122" height="98" rx="12" fill="#FFFFFF" stroke="#E89B0C" stroke-width="3"/>
+      <text x="747" y="440" text-anchor="middle" font-family="'Public Sans',sans-serif" font-weight="800" font-size="21" fill="#B97900">MERGE</text>
+      <text x="747" y="462" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="10.5" fill="#1C2430">nur Prüfer</text>
+      <text x="747" y="479" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="10.5" fill="#1C2430">Vier-Augen-Review</text>
+      <text x="700" y="592" text-anchor="middle" font-family="'Public Sans',sans-serif" font-weight="800" font-size="20" fill="#1C2430">PRÜFER</text>
+      <text x="700" y="612" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="11" fill="#6E7684">verantwortlich für Merge &amp; Deploy</text>
+    </g>
+
+    <!-- ================= PROTECTED ENVIRONMENTS ================= -->
+    <g>
+      <rect x="868" y="336" width="32" height="169" rx="8" fill="#E89B0C"/>
+      <circle cx="884" cy="392" r="11" fill="none" stroke="#FFFFFF" stroke-width="3"/>
+      <rect x="877" y="392" width="14" height="14" rx="3" fill="#FFFFFF"/>
+      <text x="884" y="472" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="9.5" fill="#FFFFFF" transform="rotate(-90 884 472)">nur Prüfer</text>
+      <text x="928" y="582" text-anchor="middle" font-family="'Public Sans',sans-serif" font-weight="800" font-size="16" fill="#1F4E79">DEPLOY-SCHRANKE</text>
+      <text x="928" y="600" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="10.5" fill="#41618B">Protected Environments · nur Prüfer</text>
+    </g>
+
+    <!-- Deploy-Pfad -->
+    <path d="M810 296 L810 531 L1150 531" fill="none" stroke="#1C2430" stroke-width="3.2" marker-end="url(#arr)"/>
+    <path d="M1030 531 L1030 462" fill="none" stroke="#1C2430" stroke-width="3.2" marker-end="url(#arr)"/>
+    <path d="M1300 531 L1300 462" fill="none" stroke="#1C2430" stroke-width="3.2" marker-end="url(#arr)"/>
+    <text x="1010" y="640" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="11.5" fill="#41618B">deployt wird nur die genehmigte Version aus releases</text>
+
+    <!-- ================= TEST ================= -->
+    <g>
+      <rect x="940" y="288" width="150" height="168" rx="14" fill="#1F4E79"/>
+      <text x="1015" y="360" text-anchor="middle" font-family="'Public Sans',sans-serif" font-weight="800" font-size="30" fill="#FFFFFF">TEST</text>
+      <text x="1015" y="388" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="11" fill="#C6D8EA">Deploy nur mit</text>
+      <text x="1015" y="405" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="11" fill="#C6D8EA">Change + Freigabe</text>
+    </g>
+
+    <!-- ================= PROD ================= -->
+    <g>
+      <rect x="1216" y="238" width="168" height="218" rx="14" fill="#1F4E79"/>
+      <text x="1300" y="330" text-anchor="middle" font-family="'Public Sans',sans-serif" font-weight="800" font-size="34" fill="#FFFFFF">PROD</text>
+      <text x="1300" y="362" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="11" fill="#C6D8EA">Deploy nur mit</text>
+      <text x="1300" y="379" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="11" fill="#C6D8EA">Change + Freigabe</text>
+    </g>
+  </svg>
+  </div>
+
+  <div class="rules">
+    <div class="rule"><h3 class="i">Unveränderliche Artefakte</h3><p>Einmal in „releases", nie wieder überschreibbar — deployt wird bitgenau die genehmigte Version (Digest).</p></div>
+    <div class="rule"><h3 class="b">Change-Gate</h3><p>Die Pipeline prüft den Genehmigungsstatus in ServiceNow automatisch — ohne gültigen Change kein Deploy.</p></div>
+    <div class="rule"><h3 class="a">Vier-Augen-Merge</h3><p>Auf den geschützten Hauptzweig mergen nur benannte Prüfer — niemand genehmigt die eigene Änderung.</p></div>
+    <div class="rule"><h3 class="g">Getrennte Gruppen</h3><p>Zwei Top-Level-Gruppen mit eigenen Berechtigungen — die Governance-Grenze entspricht exakt der IAM-Sicht.</p></div>
+  </div>
+
+  <div class="foot">GitLab · Nexus · ServiceNow — Rollenvergabe über das zentrale Access Management</div>
+
+</div>
+</body>
+</html>
