@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>[#DBI-6605] Umzug Gitlab MB-Portal</title>
+    <meta http-equiv="Content-Type" Content="application/vnd.ms-word; charset=UTF-8">
+        <style type="text/css">
+
+.tableBorder, .grid
+{
+    background-color: #fff;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tableBorder td, .grid td
+{
+    vertical-align: top;
+    padding: 2px;
+    border: 1px solid #ccc;
+}
+
+.noPadding
+{
+    padding: 0 !important;
+}
+
+h3 .subText
+{
+    font-size: 60%;
+    font-weight: normal;
+}
+
+.tabLabel
+{
+    font-weight: bold;
+    border: 1px solid #ccc;
+    border-bottom:none;
+    padding: 2px;
+    display: inline;
+}
+
+td.blank
+{
+    padding: 0;
+    margin: 0;
+}
+
+.blank td
+{
+    border: none;
+}
+
+#descriptionArea
+{
+    margin: 0;
+    padding: 2px;
+    border: 1px solid #ccc;
+}
+
+hr
+{
+    border-top:1px solid #aaa;
+}
+
+hr.fullcontent
+{
+  height: 15px;
+  padding: 10px 0;
+  background: #fff url('https://jira.apps.union-investment.de/images/icons/hr.gif') no-repeat scroll center;
+}
+
+</style>
+
+</head>
+<body>
+
+<table class="tableBorder" cellpadding="0" cellspacing="0" border="0" width="100%">
+    <tr>
+        <td bgcolor="#f0f0f0" width="100%" colspan="2" valign="top">
+                            <h3 class="formtitle">
+                        [DBI-6605]&nbsp;<a href="https://jira.apps.union-investment.de/browse/DBI-6605">Umzug Gitlab MB-Portal</a>
+            <span class="subText">
+               Created: 27.11.2025                   &nbsp;Updated: 08.09.2026
+
+                                            </span>
+            </h3>
+        </td>
+    </tr>
+    <tr>
+        <td width="20%"><b>Status:</b></td>
+        <td width="80%">In implementation</td>
+    </tr>
+    <tr>
+        <td width="20%"><b>Project:</b></td>
+        <td width="80%"><a href="https://jira.apps.union-investment.de/secure/BrowseProject.jspa?id=39714">Domain Business Intelligence</a></td>
+    </tr>
+
+        <tr>
+            <td><b>Component/s:</b></td>
+            <td>
+                                        <a title="2026-Q2"
+                href="https://jira.apps.union-investment.de/issues/?jql=project%3D39714%20AND%20%22component%22%3D94012%20ORDER%20BY%20priority%20ASC"
+            >2026-Q2</a>,                    <a title="2026-Q3"
+                href="https://jira.apps.union-investment.de/issues/?jql=project%3D39714%20AND%20%22component%22%3D94013%20ORDER%20BY%20priority%20ASC"
+            >2026-Q3</a>,                    <a title="DBI_BIT"
+                href="https://jira.apps.union-investment.de/issues/?jql=project%3D39714%20AND%20%22component%22%3D94216%20ORDER%20BY%20priority%20ASC"
+            >DBI_BIT</a>,                    <a title="DBI_Team_MAN"
+                href="https://jira.apps.union-investment.de/issues/?jql=project%3D39714%20AND%20%22component%22%3D93756%20ORDER%20BY%20priority%20ASC"
+            >DBI_Team_MAN</a>                        </td>
+    </tr>
+    
+
+        <tr>
+            <td><b>Affects Version/s:</b></td>
+            <td>
+                            None
+                </td>
+    </tr>
+    
+
+        <tr>
+            <td><b>Fix Version/s:</b></td>
+            <td>
+                            None
+                </td>
+    </tr>
+    
+    </table>
+
+<br />
+<table class="grid" cellpadding="0" cellspacing="0" border="0" width="100%">
+    <tr>
+        <td bgcolor="#f0f0f0" valign="top" width="20%">
+            <b>Type:</b>
+        </td>
+        <td bgcolor="#ffffff" valign="top"  width="30%" >
+            Epic
+        </td>
+
+                    <td bgcolor="#f0f0f0">
+                <b>Priority:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top" nowrap>
+                Prio 4
+            </td>
+            </tr>
+    <tr>
+                        <td bgcolor="#f0f0f0" valign="top" width="20%">
+                <b>Reporter:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top"  width="30%" >
+                                            <a class="user-hover" rel="XZ49E6A@UNION-INVESTMENT.DE" id="word_reporter_XZ49E6A@UNION-INVESTMENT.DE" href="https://jira.apps.union-investment.de/secure/ViewProfile.jspa?name=XZ49E6A%40UNION-INVESTMENT.DE">Augustin, Felix (UIM)</a>
+                            </td>
+        
+                    <td bgcolor="#f0f0f0" width="20%">
+                <b>Assignee:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top" nowrap  width="30%" >
+                                    Unassigned
+                            </td>
+            </tr>
+    	<tr>
+		<td bgcolor="#f0f0f0" width="20%">
+			<b>Resolution:</b>
+		</td>
+		<td bgcolor="#ffffff" valign="top" width="30%" nowrap>
+            				Unresolved
+                    </td>
+                    <td bgcolor="#ffffff" colspan="2">&nbsp;</td>
+        
+    </tr>
+    
+        <tr>
+        <td bgcolor="#f0f0f0" width="20%">
+            <b>Labels:</b>
+        </td>
+        <td id="labels-1121220-value" class="value" bgcolor="#ffffff" valign="top" colspan="3" nowrap>
+                            DBI_B2C4B, DBI_BIT, DBI_Could                    </td>
+    </tr>
+    
+    	<tr>
+        		<td bgcolor="#f0f0f0" width="20%"><b>Remaining Estimate:</b></td>
+        <td bgcolor="#ffffff" valign="top" nowrap width="80%" colspan="3">
+                            Not Specified
+            		</td>
+    </tr>
+    <tr>
+                <td bgcolor="#f0f0f0" width="20%"><b>Time Spent:</b></td>
+		<td bgcolor="#ffffff" valign="top" nowrap width="80%" colspan="3">
+                            Not Specified
+            		</td>
+	</tr>
+    <tr>
+                <td bgcolor="#f0f0f0" width="20%"><b>Original Estimate:</b></td>
+		<td bgcolor="#ffffff" valign="top" nowrap width="80%" colspan="3">
+                            Not Specified
+            		</td>
+    </tr>
+    
+    </table>
+
+
+
+    <br />
+
+    	<table class="grid" cellpadding="0" cellspacing="0" border="0" width="100%">
+            
+
+        
+    
+
+
+
+                        <tr>
+                <td bgcolor="#f0f0f0" width="20%" valign="top"><b>Epic Name:</b></td>
+                <td id="customfield_10207-1121220-value" class="value" bgcolor="#ffffff" width="80%">      Umzug Gitlab MB Portal
+  </td>
+            </tr>
+                                <tr>
+                <td bgcolor="#f0f0f0" width="20%" valign="top"><b>Request type:</b></td>
+                <td id="customfield_12200-1121220-value" class="value" bgcolor="#ffffff" width="80%">    IT Anforderung (ITA)
+</td>
+            </tr>
+                                                                    <tr>
+                <td bgcolor="#f0f0f0" width="20%" valign="top"><b>Target start:</b></td>
+                <td id="customfield_14001-1121220-value" class="value" bgcolor="#ffffff" width="80%">
+          <span title="01.07.2026"><time datetime="2026-07-01">01.07.2026</time></span>
+    </td>
+            </tr>
+                                <tr>
+                <td bgcolor="#f0f0f0" width="20%" valign="top"><b>Target end:</b></td>
+                <td id="customfield_14002-1121220-value" class="value" bgcolor="#ffffff" width="80%">
+          <span title="15.08.2026"><time datetime="2026-08-15">15.08.2026</time></span>
+    </td>
+            </tr>
+                                                                                                                                                                                                                                <tr>
+                <td bgcolor="#f0f0f0" width="20%" valign="top"><b>Cycle:</b></td>
+                <td id="customfield_14506-1121220-value" class="value" bgcolor="#ffffff" width="80%">
+
+
+    <div class="shorten" id="customfield_14506-field">
+        							<span>2026-Q2</span>,			        							<span>2026-Q3</span>,			        							<span>2026-Q4</span>			            </div>
+</td>
+            </tr>
+                                                                        <tr>
+                <td bgcolor="#f0f0f0" width="20%" valign="top"><b>IT architecture relevance:</b></td>
+                <td id="customfield_13700-1121220-value" class="value" bgcolor="#ffffff" width="80%">    Offen
+</td>
+            </tr>
+                                <tr>
+                <td bgcolor="#f0f0f0" width="20%" valign="top"><b>Security Relevance:</b></td>
+                <td id="customfield_13701-1121220-value" class="value" bgcolor="#ffffff" width="80%">    Offen
+</td>
+            </tr>
+                                                                                    <tr>
+                <td bgcolor="#f0f0f0" width="20%" valign="top"><b>External expense (PT):</b></td>
+                <td id="customfield_12204-1121220-value" class="value" bgcolor="#ffffff" width="80%">    6
+</td>
+            </tr>
+                                <tr>
+                <td bgcolor="#f0f0f0" width="20%" valign="top"><b>Bid (in days):</b></td>
+                <td id="customfield_12100-1121220-value" class="value" bgcolor="#ffffff" width="80%">
+          
+  
+</td>
+            </tr>
+                                                        <tr>
+                <td bgcolor="#f0f0f0" width="20%" valign="top"><b>Estimate details:</b></td>
+                <td id="customfield_12305-1121220-value" class="value" bgcolor="#ffffff" width="80%">      <p>M</p>
+  </td>
+            </tr>
+                                    </table>
+
+    <br/>
+
+    <table cellpadding="2" cellspacing="0" border="0" width="100%" align="center">
+    <tr>
+        <td bgcolor="#bbbbbb" width="1%" nowrap align="center">
+            &nbsp;<font color="#ffffff"><b>Description</b></font>&nbsp;
+        </td>
+        <td>&nbsp;</td>
+    </tr>
+    </table>
+
+    <table cellpadding="0" cellspacing="0" border="0" width="100%">
+    <tr>
+        <td id="descriptionArea">
+            <p>Wir migrieren das MB Portal Front- &amp; Backend von Azure DevOps zu Gitlab. Dies erfolgt in einzelnene Steps.</p>
+
+<p> </p>
+
+<p>Wir starten mit den Templates.</p>
+
+<p> </p>
+
+<p>Wichtig:</p>
+
+<p>APIM UMzug ist nicht inbegriffen sondern in einer eigene Story</p>
+            <br/>
+        </td>
+    </tr>
+    </table>
+
+Generated at Fri Oct 23 09:44:51 CEST 2026 by Iftime, Daniel (UIS) using Jira 10.3.26#10030026-sha1:1ecd6b128104dee61aadbfb736809c20260e9b3f.
+
+</body>
+</html>
