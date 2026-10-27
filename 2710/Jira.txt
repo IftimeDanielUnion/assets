@@ -1,0 +1,28 @@
+
+h3. Als .. möchte ich ... damit ... .
+h3. Offene Punkte:
+ * Welche Punkte müssen geklärt werden? Welche Abhängigkeiten zu anderen Stories/Teams sind absehbar?
+
+h3. Vorbedingungen:
+ * Welche Vorbedingung/Zustand in der Anwendung muss gegeben sein, um das Feature nutzen zu können? Storyverlinkungen nutzen.
+
+h3. Anforderungen:
+ * Was ist das Business Ziel der Story? Welche Aufgaben und Anforderungen gehören in die Umsetzung?
+
+h3. Fehlerhandling:
+ * Welche fachlichen Fehler müssen berücksichtigt werden, welche Fehlermeldungen sollen angezeigt werden?
+
+h3. Server-Log/Audit-Log/Business-Log:
+ * Welche Informationen zu einer Aktivität wollen/müssen wir erfassen?
+
+h3. UX/UI:
+ * Links zu Komponenten
+
+h3. Technische Hinweise
+ * Hier werden wichtige Entscheidungen aus dem Refinement für die spätere technische Umsetzung festgehalten.
+
+h3. Feature Toggle:
+ * Soll die Funktion gezielt ein-/ausschaltbar sein? Welche Funktionen sind davon noch betroffen? Toggle-Benamung sowie Default-Einstellung dokumentieren.
+
+h3. Akzeptanzkriterien:
+ * Diese Punkte müssen erfüllt sein, damit die Story erfolgreich umgesetzt ist.
