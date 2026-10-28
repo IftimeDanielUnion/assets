@@ -1,0 +1,11 @@
+Hi Marcus, du hast recht, der AzureRM-Provider unterstützt EasyAuth für Container Apps aktuell nicht direkt.
+
+Wir könnten die Container App aber weiterhin mit AzureRM verwalten und lediglich die EasyAuth-Konfiguration über den AzAPI-Provider ergänzen.
+
+AzAPI verwenden wir in `ui-mb-infrastructure` bereits, beispielsweise in `modules/functionapp/main.tf` für Azure File Shares. Die Provider-Konfiguration liegt unter `modules/functionapp/provider_override.tf`.
+
+Mein Vorschlag wäre daher, diesen Ansatz auch für unser Container-App-Modul zu nutzen und EasyAuth darüber einzurichten. So hätten wir alles weiterhin über Terraform verwaltet und müssten nichts manuell im Azure-Portal konfigurieren.
+
+Ich würde das zunächst in DEV ausprobieren und prüfen, ob die Authentifizierung wie gewünscht funktioniert.
+
+Was meinst du?
