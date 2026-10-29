@@ -1,1 +1,1 @@
-
+Also Service Principal haben wir noch nicht, das muss extra bestellt werden bei CIS, ich habe dir Change Vorlage mitgegeben sowie Confluence Artikel, eigentlich ist bis jetzt noch nichts gemacht worden, die Codeänderungen in ui-mb-infrastructure bräuchten wir dementsprechend auch, in der Ordnerstruktur so das ich sie copy pasten könnte also über alte dateien ziehen weil ich das manuell machen müss, neuer code würde dann in gleicher ordnerstruktur stehen so das ich einfach in originalfolder ziehen kann. 
