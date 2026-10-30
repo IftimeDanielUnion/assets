@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>[#DBI-10553] Berechtigungskonzept ServiceBus</title>
+    <meta http-equiv="Content-Type" Content="application/vnd.ms-word; charset=UTF-8">
+        <style type="text/css">
+
+.tableBorder, .grid
+{
+    background-color: #fff;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tableBorder td, .grid td
+{
+    vertical-align: top;
+    padding: 2px;
+    border: 1px solid #ccc;
+}
+
+.noPadding
+{
+    padding: 0 !important;
+}
+
+h3 .subText
+{
+    font-size: 60%;
+    font-weight: normal;
+}
+
+.tabLabel
+{
+    font-weight: bold;
+    border: 1px solid #ccc;
+    border-bottom:none;
+    padding: 2px;
+    display: inline;
+}
+
+td.blank
+{
+    padding: 0;
+    margin: 0;
+}
+
+.blank td
+{
+    border: none;
+}
+
+#descriptionArea
+{
+    margin: 0;
+    padding: 2px;
+    border: 1px solid #ccc;
+}
+
+hr
+{
+    border-top:1px solid #aaa;
+}
+
+hr.fullcontent
+{
+  height: 15px;
+  padding: 10px 0;
+  background: #fff url('https://jira.apps.union-investment.de/images/icons/hr.gif') no-repeat scroll center;
+}
+
+</style>
+
+</head>
+<body>
+
+<table class="tableBorder" cellpadding="0" cellspacing="0" border="0" width="100%">
+    <tr>
+        <td bgcolor="#f0f0f0" width="100%" colspan="2" valign="top">
+                            <h3 class="formtitle">
+                        [DBI-10553]&nbsp;<a href="https://jira.apps.union-investment.de/browse/DBI-10553">Berechtigungskonzept ServiceBus</a>
+            <span class="subText">
+               Created: 29.07.2026                   &nbsp;Updated: 30.10.2026
+
+                                            </span>
+            </h3>
+        </td>
+    </tr>
+    <tr>
+        <td width="20%"><b>Status:</b></td>
+        <td width="80%">In progress</td>
+    </tr>
+    <tr>
+        <td width="20%"><b>Project:</b></td>
+        <td width="80%"><a href="https://jira.apps.union-investment.de/secure/BrowseProject.jspa?id=39714">Domain Business Intelligence</a></td>
+    </tr>
+
+        <tr>
+            <td><b>Component/s:</b></td>
+            <td>
+                                        <a title="DBI_Team_MAN"
+                href="https://jira.apps.union-investment.de/issues/?jql=project%3D39714%20AND%20%22component%22%3D93756%20ORDER%20BY%20priority%20ASC"
+            >DBI_Team_MAN</a>                        </td>
+    </tr>
+    
+
+        <tr>
+            <td><b>Affects Version/s:</b></td>
+            <td>
+                            None
+                </td>
+    </tr>
+    
+
+        <tr>
+            <td><b>Fix Version/s:</b></td>
+            <td>
+                            None
+                </td>
+    </tr>
+    
+    </table>
+
+<br />
+<table class="grid" cellpadding="0" cellspacing="0" border="0" width="100%">
+    <tr>
+        <td bgcolor="#f0f0f0" valign="top" width="20%">
+            <b>Type:</b>
+        </td>
+        <td bgcolor="#ffffff" valign="top"  width="30%" >
+            Story
+        </td>
+
+                    <td bgcolor="#f0f0f0">
+                <b>Priority:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top" nowrap>
+                Prio 4
+            </td>
+            </tr>
+    <tr>
+                        <td bgcolor="#f0f0f0" valign="top" width="20%">
+                <b>Reporter:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top"  width="30%" >
+                                            <a class="user-hover" rel="XZ49E6A@UNION-INVESTMENT.DE" id="word_reporter_XZ49E6A@UNION-INVESTMENT.DE" href="https://jira.apps.union-investment.de/secure/ViewProfile.jspa?name=XZ49E6A%40UNION-INVESTMENT.DE">Augustin, Felix (UIM)</a>
+                            </td>
+        
+                    <td bgcolor="#f0f0f0" width="20%">
+                <b>Assignee:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top" nowrap  width="30%" >
+                                            <a class="user-hover" rel="XZ4AFB0@UNION-INVESTMENT.DE" id="word_assignee_XZ4AFB0@UNION-INVESTMENT.DE" href="https://jira.apps.union-investment.de/secure/ViewProfile.jspa?name=XZ4AFB0%40UNION-INVESTMENT.DE">Iftime, Daniel (UIS)</a>
+                            </td>
+            </tr>
+    	<tr>
+		<td bgcolor="#f0f0f0" width="20%">
+			<b>Resolution:</b>
+		</td>
+		<td bgcolor="#ffffff" valign="top" width="30%" nowrap>
+            				Unresolved
+                    </td>
+                    <td bgcolor="#ffffff" colspan="2">&nbsp;</td>
+        
+    </tr>
+    
+        <tr>
+        <td bgcolor="#f0f0f0" width="20%">
+            <b>Labels:</b>
+        </td>
+        <td id="labels-1464286-value" class="value" bgcolor="#ffffff" valign="top" colspan="3" nowrap>
+                            SD_MB_DevOps, WP_DevOps                    </td>
+    </tr>
+    
+    	<tr>
+                <td bgcolor="#f0f0f0" width="20%"><b>Σ Remaining Estimate:</b></td>
+        <td bgcolor="#ffffff" valign="top" nowrap>
+                            Not Specified
+                    </td>
+        		<td bgcolor="#f0f0f0" width="20%"><b>Remaining Estimate:</b></td>
+        <td bgcolor="#ffffff" valign="top" nowrap>
+                            Not Specified
+            		</td>
+    </tr>
+    <tr>
+                <td bgcolor="#f0f0f0" width="20%"><b>Σ Time Spent:</b></td>
+        <td bgcolor="#ffffff" valign="top" nowrap>
+                            Not Specified
+                    </td>
+                <td bgcolor="#f0f0f0" width="20%"><b>Time Spent:</b></td>
+		<td bgcolor="#ffffff" valign="top" nowrap>
+                            Not Specified
+            		</td>
+	</tr>
+    <tr>
+                <td bgcolor="#f0f0f0" width="20%"><b>Σ Original Estimate:</b></td>
+        <td bgcolor="#ffffff" valign="top" nowrap>
+                            Not Specified
+                    </td>
+                <td bgcolor="#f0f0f0" width="20%"><b>Original Estimate:</b></td>
+		<td bgcolor="#ffffff" valign="top" nowrap>
+                            Not Specified
+            		</td>
+    </tr>
+    
+    </table>
+
+
+
+    <br />
+
+    	<table class="grid" cellpadding="0" cellspacing="0" border="0" width="100%">
+            
+
+        
+            <tr>
+            <td bgcolor="#f0f0f0" width="20%" valign="top">
+                <b>Issue Links:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top" class="noPadding">
+                <table cellpadding="0" cellspacing="0" border="0" width="100%" class="blank">
+                                            <tr>
+                            <td colspan="4" bgcolor="#f0f0f0">
+                                <b>Zusammenhang</b><br/>
+                            </td>
+                        </tr>
+                                                                <tr>
+            <td>
+                hängt zusammen mit
+            </td>
+            <td>
+                <a href="https://jira.apps.union-investment.de/browse/DBI-10676">
+                     <strike>DBI-10676</strike>                 </a>
+            </td>
+            <td>
+                Schnittstellen- und Anbindungsdokumen...
+            </td>
+            <td>
+                Completed
+            </td>
+        </tr>
+                                        </table>
+            </td>
+        </tr>
+    
+
+
+<tr><td bgcolor="#f0f0f0" width="20%" valign="top"><b>Sub-Tasks:</b></td>
+    <td bgcolor="#ffffff" valign="top">
+        <table class="grid" cellpadding="0" cellspacing="0" border="0" width="100%">
+            <tr bgcolor="#f0f0f0">
+                <td>
+                    <b>Key</b><br/>
+                </td>
+                <td>
+                    <b>Summary</b><br/>
+                </td>
+                <td>
+                    <b>Type</b><br/>
+                </td>
+                <td>
+                    <b>Status</b><br/>
+                </td>
+                <td>
+                    <b>Assignee</b><br/>
+                </td>
+            </tr>
+                                            <tr>
+                    <td>
+                        <a href="https://jira.apps.union-investment.de/browse/DBI-12175">DBI-12175</a>
+                    </td>
+                    <td valign="top" width="25%">
+                        <a href="https://jira.apps.union-investment.de/browse/DBI-12175">Rechte-Matrix aufstellen: welche Anwe...</a>
+                    </td>
+                    <td>
+                        Subtask
+                    </td>
+                    <td>
+                        New
+                    </td>
+                    <td>
+                                                     &nbsp;
+                                            </td>
+                </tr>
+                                                            <tr>
+                    <td>
+                        <a href="https://jira.apps.union-investment.de/browse/DBI-12533">DBI-12533</a>
+                    </td>
+                    <td valign="top" width="25%">
+                        <a href="https://jira.apps.union-investment.de/browse/DBI-12533">Entra-Gruppe für UMP anlegen</a>
+                    </td>
+                    <td>
+                        Subtask
+                    </td>
+                    <td>
+                        New
+                    </td>
+                    <td>
+                                                     &nbsp;
+                                            </td>
+                </tr>
+                                                            <tr>
+                    <td>
+                        <a href="https://jira.apps.union-investment.de/browse/DBI-12173">DBI-12173</a>
+                    </td>
+                    <td valign="top" width="25%">
+                        <a href="https://jira.apps.union-investment.de/browse/DBI-12173">Infrastruktur-Repo anpassen, das Queu...</a>
+                    </td>
+                    <td>
+                        Subtask
+                    </td>
+                    <td>
+                        New
+                    </td>
+                    <td>
+                                                     &nbsp;
+                                            </td>
+                </tr>
+                                                            <tr>
+                    <td>
+                        <a href="https://jira.apps.union-investment.de/browse/DBI-12172">DBI-12172</a>
+                    </td>
+                    <td valign="top" width="25%">
+                        <a href="https://jira.apps.union-investment.de/browse/DBI-12172">Code, der Queues anlegt, löschen</a>
+                    </td>
+                    <td>
+                        Subtask
+                    </td>
+                    <td>
+                        New
+                    </td>
+                    <td>
+                                                     &nbsp;
+                                            </td>
+                </tr>
+                                                            <tr>
+                    <td>
+                        <a href="https://jira.apps.union-investment.de/browse/DBI-12176">DBI-12176</a>
+                    </td>
+                    <td valign="top" width="25%">
+                        <a href="https://jira.apps.union-investment.de/browse/DBI-12176">evtl. CIS auffordern dem UMP-SP entsp...</a>
+                    </td>
+                    <td>
+                        Subtask
+                    </td>
+                    <td>
+                        New
+                    </td>
+                    <td>
+                                                     &nbsp;
+                                            </td>
+                </tr>
+                                                            <tr>
+                    <td>
+                        <a href="https://jira.apps.union-investment.de/browse/DBI-12178">DBI-12178</a>
+                    </td>
+                    <td valign="top" width="25%">
+                        <a href="https://jira.apps.union-investment.de/browse/DBI-12178">Review</a>
+                    </td>
+                    <td>
+                        Subtask
+                    </td>
+                    <td>
+                        New
+                    </td>
+                    <td>
+                                                     &nbsp;
+                                            </td>
+                </tr>
+                                                            <tr>
+                    <td>
+                        <a href="https://jira.apps.union-investment.de/browse/DBI-12177">DBI-12177</a>
+                    </td>
+                    <td valign="top" width="25%">
+                        <a href="https://jira.apps.union-investment.de/browse/DBI-12177">Test-Deployment</a>
+                    </td>
+                    <td>
+                        Subtask
+                    </td>
+                    <td>
+                        New
+                    </td>
+                    <td>
+                                                     &nbsp;
+                                            </td>
+                </tr>
+                                                            <tr>
+                    <td>
+                        <a href="https://jira.apps.union-investment.de/browse/DBI-12179">DBI-12179</a>
+                    </td>
+                    <td valign="top" width="25%">
+                        <a href="https://jira.apps.union-investment.de/browse/DBI-12179">integrativ testen</a>
+                    </td>
+                    <td>
+                        Subtask
+                    </td>
+                    <td>
+                        New
+                    </td>
+                    <td>
+                                                     &nbsp;
+                                            </td>
+                </tr>
+                                    </table>
+    </td>
+</tr>
+
+                        <tr>
+                <td bgcolor="#f0f0f0" width="20%" valign="top"><b>Epic Link:</b></td>
+                <td id="customfield_10206-1464286-value" class="value" bgcolor="#ffffff" width="80%">
+    <a class="aui-label ghx-label-11" href="https://jira.apps.union-investment.de/browse/DBI-11437">
+        Anbindung UMP an den IM Hub
+    </a>
+</td>
+            </tr>
+                                                                                            <tr>
+                <td bgcolor="#f0f0f0" width="20%" valign="top"><b>Contact person IT:</b></td>
+                <td id="customfield_11200-1464286-value" class="value" bgcolor="#ffffff" width="80%">            <span class="aui-avatar aui-avatar-small"><span class="aui-avatar-inner"><img src="https://jira.apps.union-investment.de/secure/useravatar?ownerId=xz49d1a&amp;avatarId=72402" alt="Liebich, Norman (UIS)" /></span></span>
+        <span class="tinylink">        <span class="user-hover" rel="XZ49D1A@UNION-INVESTMENT.DE" id="user_cf_XZ49D1A@UNION-INVESTMENT.DE">Liebich, Norman (UIS)</span></span>
+    </td>
+            </tr>
+                                            <tr>
+                <td bgcolor="#f0f0f0" width="20%" valign="top"><b>Contact person FB:</b></td>
+                <td id="customfield_10401-1464286-value" class="value" bgcolor="#ffffff" width="80%">    <div class="shorten" id="customfield_10401-field">
+                                    <span class="tinylink">        <span class="user-hover" rel="XZ49E6A@UNION-INVESTMENT.DE" id="multiuser_cf_XZ49E6A@UNION-INVESTMENT.DE">Augustin, Felix (UIM)</span></span>                        </div>
+</td>
+            </tr>
+                                                        <tr>
+                <td bgcolor="#f0f0f0" width="20%" valign="top"><b>Sprint:</b></td>
+                <td id="customfield_10205-1464286-value" class="value" bgcolor="#ffffff" width="80%">Mandalorian Sprint 81</td>
+            </tr>
+                                                                        <tr>
+                <td bgcolor="#f0f0f0" width="20%" valign="top"><b>Story points:</b></td>
+                <td id="customfield_10202-1464286-value" class="value" bgcolor="#ffffff" width="80%">    8
+</td>
+            </tr>
+            </table>
+
+    <br/>
+
+    <table cellpadding="2" cellspacing="0" border="0" width="100%" align="center">
+    <tr>
+        <td bgcolor="#bbbbbb" width="1%" nowrap align="center">
+            &nbsp;<font color="#ffffff"><b>Description</b></font>&nbsp;
+        </td>
+        <td>&nbsp;</td>
+    </tr>
+    </table>
+
+    <table cellpadding="0" cellspacing="0" border="0" width="100%">
+    <tr>
+        <td id="descriptionArea">
+            <h3><a name="AlsSicherheitsverantwortlichem%C3%B6chtenwirimRahmenderUMPAnbindungandenIMActionhhub%2CdassnurnotwendigeInformationenvonderUMPgelesenwerdenk%C3%B6nnen%28Datenschutz%29."></a>Als Sicherheitsverantwortliche möchten wir im Rahmen der UMP-Anbindung an den IM-Actionhhub, dass nur notwendige Informationen von der UMP gelesen werden können (Datenschutz).</h3>
+<h3><a name="OffenePunkte%3A"></a>Offene Punkte:</h3>
+<ul>
+	<li>Stellen wir alle Queues/Topics auf Terraform um? (tendenz zu: ja)</li>
+	<li><img class="emoticon" src="https://jira.apps.union-investment.de/images/icons/emoticons/check.png" height="16" width="16" align="absmiddle" alt="" border="0"/> Wie Meldet sich die UMP am Servicebus an (Managed Identity/Service Principal)? <a href="https://jira.apps.union-investment.de/secure/ViewProfile.jspa?name=EE09146%40UNION-INVESTMENT.DE" class="user-hover" rel="EE09146@UNION-INVESTMENT.DE">Kurrat, Christoph (EXT)</a> schreibt Jörn/Massimo an -&gt; Service Principal wird bevorzugt</li>
+	<li>Wird es ein eigenes Repo (Achtung, dann auch eigene Pipeline) oder wird es im existierenden Terraform Repo gepflegt? <a href="https://jira.apps.union-investment.de/secure/ViewProfile.jspa?name=XZ4AFB0%40UNION-INVESTMENT.DE" class="user-hover" rel="XZ4AFB0@UNION-INVESTMENT.DE">Iftime, Daniel (UIS)</a> gefragt.</li>
+	<li>Wer kümmert sich um die Rechte-Vergabe (das Terraform-Script) für UMP? <a href="https://jira.apps.union-investment.de/secure/ViewProfile.jspa?name=XZ4AFB0%40UNION-INVESTMENT.DE" class="user-hover" rel="XZ4AFB0@UNION-INVESTMENT.DE">Iftime, Daniel (UIS)</a> gefragt
+	<ul>
+		<li><img class="emoticon" src="https://jira.apps.union-investment.de/images/icons/emoticons/check.png" height="16" width="16" align="absmiddle" alt="" border="0"/> wir über unser infrastruktur-Repo (für unsere Backends Rechtevergabe direkt an Managed Identity, für externe Service Principals wie UMP, über anzulegende Entra-Gruppe (wer legt diese konkret an?), die wiederum an SP vergeben wird)</li>
+		<li><del>CIS</del>   können die Rechte für unsere Queues vergeben?-</li>
+		<li>Welche Informationen werden hier von UMP benötigt?</li>
+	</ul>
+	</li>
+	<li>führen wir für all unsere Queues direkt die Rechte ein (Tendenz: ja soweit es geht)
+	<ul>
+		<li>Anlage von Queues entziehen, MBPortal kein Zugriff auf Impulsmanager-UMP - Queues und so weiter)</li>
+		<li>Ziel: drei Anwendungen, auf der Ebene Berechtigungen:
+		<ul>
+			<li>MB-Portal</li>
+			<li>UMP</li>
+			<li>IM-ActionHub</li>
+		</ul>
+		</li>
+	</ul>
+	</li>
+</ul>
+
+
+<p>Nach Gespräch mit Norman und Timo:</p>
+<ul class="alternate" type="square">
+	<li>auf managed identities können die Rechte per Terraform vergeben werden (Actiohub und MB-Portal also abgehakt)</li>
+	<li>auf Service Principals geht das nicht - deshalb neue Idee:
+	<ul class="alternate" type="square">
+		<li>Entra-Gruppen anlegen, der Service-Principal bekommt die Gruppe, im Terraform werden User mit dieser Gruppe berechtigt.</li>
+		<li>Rollen:<br/>
+App.VBST.DEV.IMAH.ServiceBus.Marktbearbeitung.UMP<br/>
+App.VBST.ABN.IMAH.ServiceBus.Marktbearbeitung.UMP<br/>
+App.VBST.PROD.IMAH.ServiceBus.Marktbearbeitung.UMP</li>
+	</ul>
+	</li>
+</ul>
+
+
+
+<h3><a name="Vorbedingungen%3A"></a>Vorbedingungen:</h3>
+<ul>
+	<li>Service Principal / managed Identity von UMP bekannt</li>
+</ul>
+
+
+<h3><a name="Anforderungen%3A"></a>Anforderungen:</h3>
+
+<p><ins>#1 Neue Queues anlegen und auf  Queue-Ebene Berechtigungen vergeben</ins></p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'>Recht UMP</th>
+<th class='confluenceTh'> Recht IM-Actionhub </th>
+<th class='confluenceTh'> Recht MB-Portal </th>
+<th class='confluenceTh'> Queue</th>
+</tr>
+<tr>
+<td class='confluenceTd'>Schreibend</td>
+<td class='confluenceTd'> Lesend </td>
+<td class='confluenceTd'>&nbsp;</td>
+<td class='confluenceTd'> imactionhub-ump-template</td>
+</tr>
+<tr>
+<td class='confluenceTd'>Lesend</td>
+<td class='confluenceTd'>Schreibend </td>
+<td class='confluenceTd'>&nbsp;</td>
+<td class='confluenceTd'> ump-impulse</td>
+</tr>
+<tr>
+<td class='confluenceTd'>Schreibend</td>
+<td class='confluenceTd'>Lesend</td>
+<td class='confluenceTd'>&nbsp;</td>
+<td class='confluenceTd'> imactionhub-ump-impulse-status</td>
+</tr>
+<tr>
+<td class='confluenceTd'>Schreibend</td>
+<td class='confluenceTd'>Lesend</td>
+<td class='confluenceTd'>&nbsp;</td>
+<td class='confluenceTd'> imactionhub-ump-template-delete</td>
+</tr>
+<tr>
+<td class='confluenceTd'>&nbsp;</td>
+<td class='confluenceTd'> Lesend </td>
+<td class='confluenceTd'> Schreibend </td>
+<td class='confluenceTd'> imactionhub-mbportal-template-delete </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<p>Diese Namen sind auch so an die UMP kommuniziert.</p>
+
+<p><ins>#2 Rechte auf Servicebus-Ebene entziehen</ins><br/>
+Die Managed Identities für MB-Portal-Backends und IM-Actionhub haben bisher Rechte (zum Lesen/Schreiben/Anlegen) auf dem Servicebus. Das muss nach der Umstellung entzogen werden<br/>
+ <br/>
+<ins>#3 Dokumentation vom IM-Actionhub aktualisieren</ins></p>
+<ul>
+	<li>In Gitlab aktualisieren, wird automatsch aktualsiert auf <a href="https://confluence.apps.union-investment.de/spaces/DOMAINBI/pages/237772664/arc42+Architektur-Dokumentation" class="external-link" target="_blank" rel="nofollow noopener">arc42 Architektur-Dokumentation - Domain Business Intelligence - Confluence</a></li>
+</ul>
+
+
+<h3><a name="Fehlerhandling%3A"></a>Fehlerhandling:</h3>
+<ul>
+	<li>Welche fachlichen Fehler müssen berücksichtigt werden, welche Fehlermeldungen sollen angezeigt werden?</li>
+</ul>
+
+
+<h3><a name="ServerLog%2FAuditLog%2FBusinessLog%3A"></a>Server-Log/Audit-Log/Business-Log:</h3>
+<ul>
+	<li>Welche Informationen zu einer Aktivität wollen/müssen wir erfassen?</li>
+</ul>
+
+
+<h3><a name="TechnischeHinweise"></a>Technische Hinweise</h3>
+<ul>
+	<li>Hier werden wichtige Entscheidungen aus dem Refinement für die spätere technische Umsetzung festgehalten.</li>
+</ul>
+
+
+<h3><a name="FeatureToggle%3A"></a>Feature Toggle:</h3>
+<ul>
+	<li>Soll die Funktion gezielt ein-/ausschaltbar sein? Welche Funktionen sind davon noch betroffen? Toggle-Benamung sowie Default-Einstellung dokumentieren.</li>
+</ul>
+
+
+<h3><a name="Akzeptanzkriterien%3A"></a>Akzeptanzkriterien:</h3>
+<ul>
+	<li>Existierende Queues werden nicht gelöscht - die existierenden werden unter Terraform-Verwaltung genommen, und bekommen andere Rechte zugewiesen, sonst ändert sich nichts.</li>
+</ul>
+
+
+<h3><a name="ExistierendeQueues"></a>Existierende Queues</h3>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'>MB-Portal</th>
+<th class='confluenceTh'>IM-Actionhub</th>
+<th class='confluenceTh'>Queue</th>
+<th class='confluenceTh'>Config-Abweichung vom Default</th>
+</tr>
+<tr>
+<td class='confluenceTd'>Schreibend </td>
+<td class='confluenceTd'> Lesend </td>
+<td class='confluenceTd'> imactionhub-mbportal-impulsestatus</td>
+</tr>
+<tr>
+<td class='confluenceTd'>Schreibend </td>
+<td class='confluenceTd'>Lesend </td>
+<td class='confluenceTd'> imactionhub-mbportal-template</td>
+</tr>
+<tr>
+<td class='confluenceTd'>Lesend  </td>
+<td class='confluenceTd'> Schreibend </td>
+<td class='confluenceTd'> mportal-impulse</td>
+</tr>
+<tr>
+<td class='confluenceTd'>Lesend und Schreibend </td>
+<td class='confluenceTd'>&nbsp;</td>
+<td class='confluenceTd'> mbportal-activation-toggle-changed</td>
+</tr>
+<tr>
+<td class='confluenceTd'>Lesend und Schreibend </td>
+<td class='confluenceTd'>&nbsp;</td>
+<td class='confluenceTd'> mbportal-backend-async-upload</td>
+<td class='confluenceTd'>MaxMessageSizeKB: 102400</td>
+</tr>
+<tr>
+<td class='confluenceTd'>Lesend und Schreibend </td>
+<td class='confluenceTd'>&nbsp;</td>
+<td class='confluenceTd'> mbportal-backend-consent-documents-saved</td>
+</tr>
+<tr>
+<td class='confluenceTd'>Lesend und Schreibend </td>
+<td class='confluenceTd'>&nbsp;</td>
+<td class='confluenceTd'> mbportal-backend-log</td>
+</tr>
+<tr>
+<td class='confluenceTd'>Lesend und Schreibend </td>
+<td class='confluenceTd'>&nbsp;</td>
+<td class='confluenceTd'> mbportal-backend-mail-dispatch</td>
+</tr>
+<tr>
+<td class='confluenceTd'>Lesend und Schreibend </td>
+<td class='confluenceTd'>&nbsp;</td>
+<td class='confluenceTd'> mbportal-backend-partial-order-starting</td>
+</tr>
+<tr>
+<td class='confluenceTd'>Lesend und Schreibend </td>
+<td class='confluenceTd'>&nbsp;</td>
+<td class='confluenceTd'> mbportal-backend-pbm-import-status</td>
+</tr>
+<tr>
+<td class='confluenceTd'>Lesend und Schreibend </td>
+<td class='confluenceTd'>&nbsp;</td>
+<td class='confluenceTd'> mbportal-backend-ump-addresses-processed</td>
+</tr>
+<tr>
+<td class='confluenceTd'>Lesend und Schreibend </td>
+<td class='confluenceTd'>&nbsp;</td>
+<td class='confluenceTd'> mbportal-backend-updated-udk-events</td>
+<td class='confluenceTd'>MaxMessageSizeKB: 102400</td>
+</tr>
+<tr>
+<td class='confluenceTd'>Lesend und Schreibend </td>
+<td class='confluenceTd'>&nbsp;</td>
+<td class='confluenceTd'> mbportal-datenprodukt-depot-opening-registered</td>
+</tr>
+<tr>
+<td class='confluenceTd'>Lesend und Schreibend </td>
+<td class='confluenceTd'>&nbsp;</td>
+<td class='confluenceTd'> mbportal-impulsmanager-activation-status-changed</td>
+</tr>
+<tr>
+<td class='confluenceTd'>Lesend und Schreibend </td>
+<td class='confluenceTd'>&nbsp;</td>
+<td class='confluenceTd'> mbportal-ump-order-created</td>
+</tr>
+<tr>
+<td class='confluenceTd'>Lesend und Schreibend </td>
+<td class='confluenceTd'>&nbsp;</td>
+<td class='confluenceTd'> pbm-integration-fetch-order-status</td>
+</tr>
+<tr>
+<td class='confluenceTd'>Lesend und Schreibend </td>
+<td class='confluenceTd'>&nbsp;</td>
+<td class='confluenceTd'> pbm-integration-issue-order</td>
+</tr>
+<tr>
+<td class='confluenceTd'>Lesend und Schreibend </td>
+<td class='confluenceTd'>&nbsp;</td>
+<td class='confluenceTd'> pbm-integration-union-digital-sales-order-started</td>
+<td class='confluenceTd'>MaxMessageSizeKB: 102400</td>
+</tr>
+<tr>
+<td class='confluenceTd'>Lesend und Schreibend </td>
+<td class='confluenceTd'>&nbsp;</td>
+<td class='confluenceTd'> pbm-integration-update-events</td>
+</tr>
+<tr>
+<td class='confluenceTd'>Lesend und Schreibend </td>
+<td class='confluenceTd'>&nbsp;</td>
+<td class='confluenceTd'> ump-integration-order-started</td>
+</tr>
+<tr>
+<td class='confluenceTd'>Lesend und Schreibend </td>
+<td class='confluenceTd'>&nbsp;</td>
+<td class='confluenceTd'> ump-integration-personal-data-updated</td>
+</tr>
+<tr>
+<td class='confluenceTd'>Lesend und Schreibend </td>
+<td class='confluenceTd'>&nbsp;</td>
+<td class='confluenceTd'> ump-integration-ump-order-deleted</td>
+</tr>
+<tr>
+<td class='confluenceTd'>Lesend und Schreibend </td>
+<td class='confluenceTd'>&nbsp;</td>
+<td class='confluenceTd'> ump-integration-update-consent-documents-triggered</td>
+</tr>
+<tr>
+<td class='confluenceTd'>Lesend und Schreibend </td>
+<td class='confluenceTd'>&nbsp;</td>
+<td class='confluenceTd'> ump-integration-update-consents-triggered</td>
+</tr>
+<tr>
+<td class='confluenceTd'>Lesend und Schreibend </td>
+<td class='confluenceTd'>&nbsp;</td>
+<td class='confluenceTd'> ump-integration-zip-document-unpacked</td>
+</tr>
+</tbody></table>
+</div>
+
+
+<h4><a name="Davonnichtmehrrelevant%3A"></a>Davon nicht mehr relevant:</h4>
+<p>eazi-integration-delete-event<br/>
+eazi-integration-issue-order<br/>
+eazi-integration-trigger-update<br/>
+eazi-integration-update-uploaded-documents<br/>
+mbportal-backend-update-customer-data-from-eazi <br/>
+mbportal-backend-update-eazi-document<br/>
+mbportal-backend-issue-order-response-from-eazi<br/>
+pbm-integration-udk-order-started<br/>
+ump-integration-download-document-archive-triggered<br/>
+imactionhub-backend-new-impulse<br/>
+imactionhub-backend-new-template</p>
+
+<h4><a name="DavonbeiteamEvo%3A"></a>Davon bei team Evo:</h4>
+<p>storage_events_mb_dms</p>
+
+<h3><a name="ExistierendeTopics%3A"></a>Existierende Topics:</h3>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'>MB-Portal</th>
+<th class='confluenceTh'>IM-Actionhub</th>
+<th class='confluenceTh'>Queue</th>
+</tr>
+<tr>
+<td class='confluenceTd'>Lesend und Schreibend </td>
+<td class='confluenceTd'>&nbsp;</td>
+<td class='confluenceTd'> config-published</td>
+</tr>
+<tr>
+<td class='confluenceTd'>Lesend und Schreibend </td>
+<td class='confluenceTd'>&nbsp;</td>
+<td class='confluenceTd'> consents-retrieved</td>
+</tr>
+<tr>
+<td class='confluenceTd'>Lesend und Schreibend </td>
+<td class='confluenceTd'>&nbsp;</td>
+<td class='confluenceTd'> invoice-event</td>
+</tr>
+<tr>
+<td class='confluenceTd'>Lesend und Schreibend </td>
+<td class='confluenceTd'>&nbsp;</td>
+<td class='confluenceTd'> service-package-order-event</td>
+</tr>
+</tbody></table>
+</div>
+
+
+<h3><a name="existierendeSubscriptions%3A"></a>existierende Subscriptions:</h3>
+<p>Topic: config-published<br/>
+Subscription                                      <br/>
+------------------------------------------------ <br/>
+config-published-finco-integration               (nicht mehr relevant)<br/>
+config-published-mbportal-administration-backend </p>
+
+<p>Topic: consents-retrieved<br/>
+Subscription                         <br/>
+----------------------------------- <br/>
+consents-retrieved-mbportal-backend <br/>
+consents-retrieved-ump-integration  <br/>
+test-subscription                    (nicht relevant)</p>
+
+<p>Topic: invoice-event<br/>
+Subscription                   <br/>
+------------------------------ <br/>
+invoice-event-mbportal-backend <br/>
+invoice-event-datenprodukt     </p>
+
+<p>Topic: service-package-order-event<br/>
+Subscription                                   <br/>
+---------------------------------------------  <br/>
+service-package-order-event-finco-integration  (nicht mehr relevant)<br/>
+service-package-order-event-mbportal-backend   <br/>
+service-package-order-event-datenprodukt     </p>
+
+<p>Rules: jede Subscription hat noch einen sql-Filter der sinngemäß so aussieht:<br/>
+targetSubscription IS NULL OR targetSubscription = '$SUBSCRIPTION_NAME'"</p>
+
+<p>z.B. in azure nachgeschaut:<br/>
+ "sqlExpression": "targetSubscription IS NULL OR targetSubscription = 'service-package-order-event-datenprodukt'"</p>
+            <br/>
+        </td>
+    </tr>
+    </table>
+
+    <br/>
+
+    <table cellpadding="2" cellspacing="0" border="0" width="100%" align="center">
+    <tr>
+        <td bgcolor="#bbbbbb" width="1%" nowrap align="center">
+            &nbsp;<font color="#ffffff"><b>Comments</b></font>&nbsp;
+        </td>
+        <td>&nbsp;</td>
+    </tr>
+    </table>
+
+    <table cellpadding="0" cellspacing="0" border="0" width="100%" class="grid" style="margin: 0;">
+                <tr id="comment-header-2313765"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="EE09E96@UNION-INVESTMENT.DE" id="word_commented_EE09E96@UNION-INVESTMENT.DE" href="https://jira.apps.union-investment.de/secure/ViewProfile.jspa?name=EE09E96%40UNION-INVESTMENT.DE">Stange, Alexander (EXT)</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">05.10.2026</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-2313765"><td bgcolor="#ffffff">
+            <p><a href="https://jira.apps.union-investment.de/secure/ViewProfile.jspa?name=EE09147%40UNION-INVESTMENT.DE" class="user-hover" rel="EE09147@UNION-INVESTMENT.DE">Schmidt, Julian (EXT)</a> &amp; <a href="https://jira.apps.union-investment.de/secure/ViewProfile.jspa?name=EE09146%40UNION-INVESTMENT.DE" class="user-hover" rel="EE09146@UNION-INVESTMENT.DE">Kurrat, Christoph (EXT)</a> </p>
+        </td></tr>
+            </table>
+Generated at Fri Oct 30 10:47:51 CET 2026 by Iftime, Daniel (UIS) using Jira 10.3.26#10030026-sha1:1ecd6b128104dee61aadbfb736809c20260e9b3f.
+
+</body>
+</html>
