@@ -1,0 +1,265 @@
+﻿CIS-CHANGE / UMP SERVICE PRINCIPAL / TEST
+Erstellt am: 29.10.2026
+Status dieses Dokuments: Entwurf zur Übernahme nach ServiceNow, nicht eingereicht.
+Jira-Bezug: DBI-10553 - Berechtigungskonzept ServiceBus
+
+Die nachstehenden Überschriften entsprechen den Feldern der bereitgestellten
+Change-Vorlage. Kopfdaten im Formular setzen; die Textblöcke jeweils in das
+entsprechende Feld übernehmen. Hinweise zur Einreichung stehen in 00_LIESMICH.txt.
+
+===============================================================================
+KOPFDATEN
+===============================================================================
+
+Angefordert von: Iftime, Daniel (UIS)
+Typ: Normal
+Modell: Normal
+Change Kategorie: Betrieb
+Subkategorie: Minor/Patch
+
+Technical Service Offering:
+TSO ENTRA ID AUTHENTICATION SERVICES
+
+Application Service:
+AS ENTRA ID AUTHENTICATION SERVICES
+
+Provider-/CTASK-Zuweisungsgruppe: ChK-IIM-CIS
+Changekoordinator / Changekoordinatorgruppe:
+Beim Einreichen gemäß zuständigem Change-Prozess auswählen; nicht vorgegeben.
+
+Risiko: 2 - Mittel (Wert aus der Vorlage; durch Changekoordinator zu bestätigen)
+Auswirkung: 2 - Mittel (Wert aus der Vorlage; durch Changekoordinator zu bestätigen)
+
+Geplantes Startdatum:
+Beim Einreichen festlegen; mindestens 2 Werktage nach Einreichung.
+Geplantes Enddatum:
+Beim Einreichen festlegen; mindestens 3 Werktage nach dem geplanten Startdatum.
+
+Hinweis zur Serviceauswahl:
+Die Bezeichnungen oben folgen dem Leitfaden "Service Principal Change".
+Im bereitgestellten Export sind die verknüpften Katalogeinträge als
+"TSO Entra ID Authentication Services Produktion" und
+"AS Entra ID Authentication Services Produktion" bezeichnet.
+Den passenden Eintrag im Katalog prüfen und auswählen. Die Zielumgebung dieses
+Antrags ist ausschließlich TEST; die Provider-Servicebezeichnung ersetzt sie nicht.
+
+===============================================================================
+TITEL
+===============================================================================
+
+[AZURE][ENTRAID][OAuth2.0][Service-Principal][sp-ump-imactionhub-servicebus-test]
+
+===============================================================================
+BEGRÜNDUNG
+===============================================================================
+
+Fachliche Begründung (W-Fragen):
+Die UnionMarketingPlatform (UMP) benötigt für die Umgebung TEST einen eigenen
+Service Principal mit Client Secret im Union-Investment-Entra-Tenant. Die
+Identität dient der späteren automatisierten Authentifizierung der UMP für den
+gezielten Nachrichtenaustausch mit dem IM-ActionHub über Azure Service Bus.
+
+Hintergrund ist DBI-10553 "Berechtigungskonzept ServiceBus". UMP soll ausschließlich
+die für diese Anbindung vorgesehenen Queues lesen beziehungsweise beschreiben
+können. Eine separate Identität je Umgebung ermöglicht die Trennung der
+Credentials und der späteren Berechtigungen für DEV, TEST und PROD.
+
+Mit diesem Change wird ausschließlich die neue Identität für TEST einschließlich
+Client Secret und Ablage der Credentials bestellt. Die Gruppenfreischaltung,
+Gruppenmitgliedschaft, Queue-Rollenzuweisungen, Terraform-Übernahme und Umstellung
+der Anwendungen sind nicht Bestandteil dieser Bestellung und werden gesondert
+geplant. Bestehende Identitäten und laufende Anwendungen werden nicht umgestellt.
+
+Metadaten
+Ansprechpartner: Daniel Iftime (UIS), Benutzerkennung XZ4AFB0
+App Owner: Norman Liebich (UIS), Benutzerkennung XZ49D1A
+Data Owner: Norman Liebich (UIS), Benutzerkennung XZ49D1A
+Workload: UnionMarketingPlatform (UMP); zugehörige Subscription S_UNIONMARKETINGPLATTFORM_TEST
+LeanIx id: 14eaa9c0-ee29-42d3-8117-62dc1835248d
+Umgebung: TEST
+Service-Principal Name: sp-ump-imactionhub-servicebus-test
+Anwendung / LeanIX-Factsheet: UnionMarketingPlatform
+Externe Anwendungs-ID: CI-00004597
+Zieltenant: Union Investment / unioninvestment.onmicrosoft.com
+Tenant-ID: 2eb07b91-f9f8-437b-a89e-59f55e565c11
+
+Credentials
+KeyVault: kv-3e850b1f380995c8b438
+Key-Vault-URI: https://kv-3e850b1f380995c8b438.vault.azure.net/
+Resource Group: rg-elanders-test
+Subscription: S_UNIONMARKETINGPLATTFORM_TEST
+Subscription-ID: 4cc30493-9746-4edb-a404-1aad8388c81c
+Key-Vault-Ressourcen-ID:
+/subscriptions/4cc30493-9746-4edb-a404-1aad8388c81c/resourceGroups/rg-elanders-test/providers/Microsoft.KeyVault/vaults/kv-3e850b1f380995c8b438
+
+Secret Name:
+- Application (Client) ID: ump-imactionhub-servicebus-test-client-id
+- Client Secret: ump-imactionhub-servicebus-test-client-secret
+
+Secret Tags:
+application=UMP; environment=test; purpose=IM-ActionHub-ServiceBus; request=DBI-10553
+Authorization certificate: No; ausschließlich Client Secret, kein Zertifikat.
+
+Bitte die Application (Client) ID und das neu erzeugte Client Secret in den oben
+genannten, bestehenden Key Vault ablegen. Die Ablage in den UMP/eLanders-Vaults
+wurde vom Antragsteller anhand der Rückmeldung von Marcel Sebbin bestätigt.
+Bestehende Secret-Einträge nicht überschreiben. Bei Namenskollision oder einer
+abweichenden CIS-Namenskonvention bitte den Antragsteller vorab abstimmen lassen.
+Credential-Laufzeit nach geltender CIS-Vorgabe wählen und das Ablaufdatum sowie
+das Vorgehen für die spätere Rotation dokumentieren. Keine Secret-Werte in
+Change-Kommentaren oder sonstigen ungeschützten Textfeldern hinterlegen.
+
+API Permissions
+API: Keine zusätzlichen API-Berechtigungen in diesem Change beantragt.
+Typ: Entfällt.
+Berechtigung: Entfällt; keine Microsoft-Graph-Berechtigungen beantragt.
+
+Expose an API
+Identifier: Nicht beantragt.
+Scope: Nicht beantragt.
+App roles: Nicht beantragt.
+
+RBAC Assignments
+Role: Keine Rollenzuweisung in diesem Change beantragt.
+Scope: Entfällt.
+
+Die angegebene UMP-Subscription identifiziert die Credential-Ablage, nicht den
+späteren Service-Bus-Berechtigungsscope. Insbesondere werden keine Owner-,
+Contributor- oder Service-Bus-Data-Owner-Rechte bestellt. Aus der Ablage der
+Credentials entsteht auch kein Auftrag, dem neuen Service Principal Zugriff
+auf den Key Vault zu erteilen.
+
+===============================================================================
+ZUSÄTZLICHE INFORMATIONEN
+===============================================================================
+
+Jira-Referenz: DBI-10553 - Berechtigungskonzept ServiceBus.
+Dieser Change betrifft nur TEST. Für die anderen Umgebungen werden separate
+Service Principals über separate Changes bestellt. Keine Identität und kein
+Client Secret über mehrere Umgebungen wiederverwenden.
+
+Geplante spätere Entra-Gruppe laut Ticket:
+App.VBST.ABN.IMAH.ServiceBus.Marktbearbeitung.UMP
+Im Ticket heißt die Gruppe ABN, die bestellte Umgebung und die Credential-Subscription heißen TEST. Diese Zuordnung bitte vor einer späteren Gruppenmitgliedschaft ausdrücklich bestätigen; keine Umbenennung oder Zuordnung zu einer anderen Stage ohne Abstimmung.
+
+CIS wird gebeten, den zuständigen Bestellweg für die spätere Aufnahme des Service
+Principals in diese Gruppe und die erforderliche RBAC-Self-Service-Freischaltung
+zu bestätigen. Gruppenanlage, Gruppenmitgliedschaft und Gruppenfreischaltung
+werden mit diesem Change noch nicht beauftragt. Eine Gruppenmitgliedschaft
+setzt eine bestätigte Zuordnung und die Prüfung bereits bestehender Gruppenrechte
+voraus. Die Identitätsbereitstellung kann unabhängig davon abgeschlossen werden.
+
+Fachlicher Zielumfang der späteren Queue-Berechtigungen laut Ticket, nur Kontext:
+- imactionhub-ump-template: UMP schreibend.
+- ump-impulse: UMP lesend.
+- imactionhub-ump-impulse-status: UMP schreibend.
+- imactionhub-ump-template-delete: UMP schreibend.
+
+Nicht Bestandteil dieses Changes:
+Queue-/Topic-Anlage oder -Löschung, Terraform-Import, Code- oder Pipelineänderungen,
+Entzug bestehender Berechtigungen, Netzwerkanpassungen und produktive Umschaltung.
+
+Bitte nach Bereitstellung zurückmelden:
+- Tatsächlicher Anzeigename der Anwendung und des Service Principals.
+- Application (Client) ID und Tenant-ID.
+- Object-ID des Service Principals / Enterprise-Application-Objekts.
+- Davon getrennt die Object-ID der App Registration, falls neu angelegt.
+- Namen und Secret-URIs der tatsächlich angelegten Key-Vault-Einträge.
+- Ablaufdatum des Client Secrets und Ansprechpartner/Verfahren für die Rotation.
+- Ergebnis der technischen Prüfung, ohne Ausgabe des Secret-Werts.
+
+===============================================================================
+DETAILS
+===============================================================================
+
+Umgebung:
+TEST / Test. Ausschließlich diese Zielumgebung auswählen.
+
+Implementierungsplan:
+1. CIS prüft die freigegebenen Bestellparameter, die Anwendungszuordnung, Owner,
+   Tenant und den angegebenen Key Vault. Bei abweichenden Namensvorgaben oder
+   einer bereits vorhandenen gleichnamigen Identität zunächst Rücksprache halten.
+2. CIS legt gemäß dem geltenden Service-Principal-Prozess die benötigte App
+   Registration und den zugehörigen Service Principal für TEST an.
+   Keine zusätzliche Identität in einer anderen Umgebung anlegen.
+3. CIS erzeugt ein Client Secret und legt Application (Client) ID und Secret unter
+   den beantragten Namen im bestehenden Key Vault kv-3e850b1f380995c8b438 ab.
+   Bereits vorhandene Einträge und Zugriffsregelungen bleiben unverändert.
+4. CIS prüft die Zuordnung der neuen Objekte und die korrekte Credential-Ablage.
+   Die technische Authentifizierung wird gemäß CIS-Verfahren geprüft.
+   Es werden keine Nachrichten an Service-Bus-Queues gesendet oder daraus gelesen.
+5. CIS dokumentiert IDs, Secret-Referenzen, Ablaufdatum und Prüfergebnis in der
+   CTASK. Der Antragsteller kontrolliert die Bereitstellung und dokumentiert die
+   Abnahme. Keine automatische Umstellung der Anwendung.
+
+Prozessreferenz aus der bereitgestellten Vorlage:
+https://confluence.apps.union-investment.de/x/0Q-7DQ
+Bestellparameter / Leitfaden:
+https://confluence.apps.union-investment.de/x/Z_wrBw
+
+Risiko- und Auswirkungsanalyse:
+Geplant ist eine additive Bereitstellung ohne Änderung laufender Anwendungen.
+Es ist keine Betriebsunterbrechung vorgesehen. Relevante Risiken sind eine
+falsche Umgebungs- oder Owner-Zuordnung, Namenskollisionen, die Ablage im falschen
+Key Vault sowie eine unbeabsichtigte Berechtigung oder Offenlegung des Secrets.
+Deshalb werden keine bestehenden Einträge überschrieben und keine Gruppen- oder
+RBAC-Zuweisungen vorgenommen. Die Umgebungs- und Credential-Zuordnung wird vor
+Abschluss kontrolliert. Die endgültige Risiko-/Auswirkungseinstufung bestätigt
+der zuständige Changekoordinator.
+
+Backout-Plan:
+Bei Fehlern die Bereitstellung stoppen und den Antragsteller informieren. Das
+neu erzeugte Credential widerrufen beziehungsweise deaktivieren und die neu
+angelegten Secret-Einträge deaktivieren. Die neue Identität bis zur Klärung nicht
+für Anwendungszugriffe freigeben. Eine Entfernung neu angelegter Identitätsobjekte
+nur nach Abstimmung und Prüfung, dass keine Nutzung aufgenommen wurde.
+Bestehende Identitäten, Secrets, Gruppen und Azure-Ressourcen bleiben unberührt.
+
+Rollback-Plan:
+Wie Backout-Plan. Da mit diesem Change keine Anwendung umgeschaltet wird, ist
+kein Anwendungs- oder Terraform-Rollback vorgesehen. Falls entgegen dem
+vereinbarten Umfang bereits eine Nutzung begonnen hat, vor dem Widerruf mit dem
+Anwendungsverantwortlichen abstimmen.
+
+Backout-Test:
+Noch nicht durchgeführt. Vor der Umsetzung die eindeutige Zuordnung der neu
+angelegten Objekte und das Widerrufs-/Deaktivierungsverfahren mit CIS prüfen.
+Kein automatisierter Terraform-Test vorgesehen, da dieser Change kein
+Terraform-Deployment beinhaltet.
+
+Backout- und Rollback-Plan identisch: Ja.
+Auto-Deployment: Nein.
+
+===============================================================================
+ZEITPLAN UND FREIGABEN / TESTDOKUMENTATION
+===============================================================================
+
+Service-Impact:
+Keine geplante Betriebsunterbrechung. Keine Umschaltung bestehender Zugriffe.
+Service-Impact Von/Bis: Entfällt, solange der beschriebene Umfang eingehalten wird.
+
+Qualitätssicherung vor dem Change:
+Antragsteller und Changekoordinator prüfen Zielumgebung, LeanIX-Zuordnung,
+App/Data Owner, den exakten Vault samt Subscription sowie die Trennung von
+Identitätsbestellung und späterer Berechtigungsvergabe. Zeitfenster nach den
+CIS-Vorlaufvorgaben setzen und erforderliche Genehmigungen einholen.
+
+Betriebsübernahmetest / Qualitätssicherung nach dem Change:
+- Neue Identität gehört zur beantragten Anwendung und Umgebung TEST.
+- Client-ID und Client Secret sind im bestätigten Vault hinterlegt.
+- Object-IDs, Secret-Referenzen und Ablaufdatum sind dokumentiert.
+- Keine bestehenden Einträge überschrieben; keine zusätzlichen Rechte vergeben.
+- Authentifizierungsprüfung gemäß CIS-Verfahren dokumentiert.
+- Keine Secret-Werte im Change oder in Prüfnachweisen offengelegt.
+
+Abnahmetest geplant/durchgeführt:
+Bereitstellungsprüfung geplant; noch nicht durchgeführt.
+Ein integrativer Service-Bus-Test folgt erst nach der separat geplanten
+Gruppen-/RBAC-Umsetzung und ist kein Abnahmekriterium dieser Identitätsbestellung.
+
+Testdokumentation hinterlegt:
+Noch nicht vorhanden; nach Durchführung in der CTASK ergänzen.
+
+Abschlussinformationen:
+Nach tatsächlicher Durchführung und Abnahme die Bereitstellung, die vereinbarten
+Rückgabewerte und die Prüfergebnisse dokumentieren. Noch nicht ausgeführt.

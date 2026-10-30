@@ -1,0 +1,141 @@
+﻿UMP / CIS / SERVICE-PRINCIPAL-BESTELLUNGEN
+Stand: 29.10.2026
+
+INHALT
+01_Change_UMP_ServicePrincipal_DEV.txt
+02_Change_UMP_ServicePrincipal_TEST.txt
+03_Change_UMP_ServicePrincipal_PROD.txt
+
+Drei eigenständige Change-Entwürfe nach der mitgelieferten ServiceNow-Vorlage.
+Die Dateien sind UTF-8 mit BOM und Windows-Zeilenenden, geeignet für Notepad und
+zum feldweisen Kopieren nach ServiceNow. Es wurden keine Changes eingereicht.
+Dieses Paket enthält keinen Infrastrukturcode und keine ausführbaren Skripte.
+
+SO VERWENDEN
+Je Umgebung einen separaten Normal Change anlegen beziehungsweise einen passenden
+vorhandenen Entwurf verwenden. Die Kopfdaten setzen und den Inhalt der Abschnitte
+TITEL, BEGRÜNDUNG, ZUSÄTZLICHE INFORMATIONEN und der Detailfelder jeweils in die
+entsprechenden Formularfelder übernehmen. Nicht die gesamte Datei in ein einziges
+Begründungsfeld kopieren. Alle drei Bestellungen betreffen neue, getrennte
+Identitäten; es werden keine bestehende SP-ID und keine bestehende Change-Nummer
+als neu vergebener Wert ausgegeben.
+
+Die Nummer UI-CHG-0100092 und CTASK0113588 stammen ausschließlich aus der
+bereitgestellten Referenzvorlage. Sie wurden nicht auf drei Bestellungen verteilt.
+Neue Nummern entstehen erst in ServiceNow.
+
+VOR DEM EINREICHEN
+1. Zeitfenster und zuständigen Changekoordinator ergänzen. Laut CIS-Leitfaden:
+   Start mindestens 2 Werktage nach Einreichung, Ende mindestens 3 Werktage nach
+   dem Start. Es sind keine Termine vereinbart oder erfunden worden.
+2. Provider-Servicezuordnung im ServiceNow-Katalog prüfen. Der Leitfaden nennt
+   TSO ENTRA ID AUTHENTICATION SERVICES und AS ENTRA ID AUTHENTICATION SERVICES.
+   Der Change-Export zeigt entsprechende verknüpfte Einträge mit dem Zusatz
+   "Produktion", im Kopffeld jedoch "AS Marktbearbeitung Entwicklung". Diese
+   Abweichung ist nicht als geklärt behandelt: In jedem Entwurf stehen der
+   Leitfadenwert und der Hinweis zum konkreten Katalogeintrag. Nicht einfach
+   "AS Marktbearbeitung Entwicklung" für alle drei Zielumgebungen übernehmen.
+3. Risiko und Auswirkung sind als Vorlagenwerte "2 - Mittel" gekennzeichnet und
+   durch den zuständigen Changekoordinator zu bestätigen. Die CTASK wird gemäß
+   Vorlage durch ChK-IIM-CIS bearbeitet; der Change-Koordinator ist damit nicht
+   automatisch festgelegt.
+
+BESTÄTIGTE GEMEINSAME ANGABEN
+Anwendung: UnionMarketingPlatform (UMP)
+LeanIX-ID: 14eaa9c0-ee29-42d3-8117-62dc1835248d
+Externe Anwendungs-ID: CI-00004597
+App Owner / Data Owner: Norman Liebich (UIS), XZ49D1A
+Ansprechpartner: Daniel Iftime (UIS), XZ4AFB0
+Authentifizierung: Client Secret, kein Zertifikat
+Je Umgebung: eigener Service Principal, eigenes Credential, eigener Change
+
+UMGEBUNGSZUORDNUNG
+DEV:
+  KV: kv-3f60b8ad0f161a3bc2e7
+  RG: rg-elanders-dev
+  Subscription: S_UNIONMARKETINGPLATTFORM_DEV
+  Subscription-ID: daa58c0d-c970-4aac-886a-c88e3c8eb620
+TEST:
+  KV: kv-3e850b1f380995c8b438
+  RG: rg-elanders-test
+  Subscription: S_UNIONMARKETINGPLATTFORM_TEST
+  Subscription-ID: 4cc30493-9746-4edb-a404-1aad8388c81c
+PROD:
+  KV: kv-a89b1e7c4000e58295e1
+  RG: rg-elanders-prod
+  Subscription: S_UNIONMARKETINGPLATTFORM_PROD
+  Subscription-ID: f8b0b9a0-4f58-4fd3-a504-1a21a87a6ae3
+
+Tenant-ID laut Azure-Screenshots: 2eb07b91-f9f8-437b-a89e-59f55e565c11
+Die vollständigen Key-Vault-Ressourcen-IDs wurden aus den bestätigten
+Subscription-IDs, Resource Groups und Vault-Namen zusammengesetzt.
+
+Die UMP/eLanders-Vaults ersetzen die zuvor diskutierten IM-ActionHub-Vaults.
+Die genannten Subscription-IDs beschreiben nur die Credential-Ablage, nicht den
+späteren Service-Bus-Berechtigungsscope. Eine Workload-Registry-ID ist nicht
+mitgeliefert; das Feld Workload benennt deshalb die bestätigte Anwendung samt
+zugehöriger UMP-Subscription und erfindet keine interne Registry-Kennung.
+
+BEANTRAGTE NEUE NAMEN
+DEV:  sp-ump-imactionhub-servicebus-dev
+TEST: sp-ump-imactionhub-servicebus-test
+PROD: sp-ump-imactionhub-servicebus-prod
+
+Die SP-Namen, Secret-Namen und Tags sind konkrete Vorschläge dieser Entwürfe,
+keine bereits existierenden Werte. CIS soll sie bei abweichenden internen
+Namensvorgaben mit dem Antragsteller abstimmen. Die Secret-Namen sind pro Stage
+mit -client-id beziehungsweise -client-secret eindeutig getrennt. Eine Laufzeit
+wird nicht erfunden, sondern gemäß CIS-Vorgabe beauftragt und zurückgemeldet.
+
+UMFANG UND ABGRENZUNG
+Bestellt werden nur die Identitäten und die Credential-Ablage. Es werden keine
+Graph-Berechtigungen, App Roles, exponierten APIs oder direkten RBAC-Zuweisungen
+beantragt. Die Gruppen aus DBI-10553 sind als späterer Kontext aufgeführt, nicht
+als existierend oder bereits freigeschaltet bestätigt:
+  DEV:  App.VBST.DEV.IMAH.ServiceBus.Marktbearbeitung.UMP
+  TEST: App.VBST.ABN.IMAH.ServiceBus.Marktbearbeitung.UMP
+  PROD: App.VBST.PROD.IMAH.ServiceBus.Marktbearbeitung.UMP
+
+Für TEST ist insbesondere die ABN-Zuordnung noch von CIS zu bestätigen. Die
+Gruppenanlage, Mitgliedschaft und Freischaltung werden separat geplant; deshalb
+wird bei diesen SP-Bestellungen noch kein tatsächlicher Service-Bus-Zugriff
+bereitgestellt. Der in den Entwürfen aufgeführte lesende/schreibende Zugriff auf
+die vier UMP-Queues beschreibt nur das spätere Ziel aus dem Ticket.
+
+Keine Queue-Löschung, keine Terraform-Imports, keine Codeänderungen und kein
+Entzug bestehender Owner-Rechte sind Teil dieser drei Changes. Auch die zuletzt
+im Chat genannten DEV-Altqueues bleiben außerhalb dieses Bestellpakets.
+
+Die Terraform-Rollback- und automatischen Testtexte aus der Vorlage wurden durch
+auf die Identitätsbereitstellung zugeschnittene Planvorschläge ersetzt. Diese
+Pläne sind Formulierungsvorschläge für den Change, keine Behauptung einer bereits
+stattgefundenen Durchführung oder einer zusätzlichen CIS-Richtlinie.
+
+QUELLEN UND ZUORDNUNG
+Die folgenden Dateien stammen aus dem hochgeladenen pi.zip, Ordner
+"Service Principal". Sie wurden zur Erstellung gelesen, aber nicht erneut in
+dieses Ausgabepaket aufgenommen:
+
+[Q1] change_request.pdf, Seiten 1-3: Formularfelder, Vorlagenwerte, Details,
+     Backout/Tests. Seiten 4-5: verknüpfte Service-Einträge und CTASK-Gruppe.
+[Q2] OAuth 2.0 - Service Principal_1cae3e1e9d58420393f7a3f1430420be-281026-1400-2346.pdf,
+     Seiten 1-3: Pflichtparameter, Vorlaufzeiten, Credentials und optionale Felder.
+[Q3] Service Principal Change_e612929d58734ee6976d626e83a9c07b-281026-1401-2348.pdf,
+     Seite 1: TSO/AS und ServiceNow-Template.
+[Q4] DBI-10553 (2).doc, Ticketstand aktualisiert am 28.10.2026:
+     Zweck, vorgesehene Entra-Gruppen und UMP-Queue-Richtungen.
+[Q5] 164871089_2836a0dc8d924849945daf19be0cd9b9-281026-1402-2352.pdf,
+     Seite 1: separater Bestellweg zur RBAC-Self-Service-Gruppenfreischaltung.
+[Q6] Nutzerangaben im Chat: Norman Liebich als beide Owner, Client Secret,
+     drei separate Changes für jeweils eigene Identitäten DEV/TEST/PROD.
+[Q7] LeanIX-Screenshot 1000134791.jpg: Anwendung, UUID und externe ID.
+[Q8] Azure-Screenshots 1000134833.jpg, 1000134834.jpg, 1000134835.jpg:
+     Key Vaults, Resource Groups, Subscription-Namen/-IDs und Tenant-Angaben.
+[Q9] Chat-Screenshot image-1793285229665.jpg:
+     Bestätigung von Marcel Sebbin zur Ablage in den bestehenden UMP-Vaults.
+[Q10] Pasted text(20261009-120912).txt, Jira-Export:
+      Benutzerkennungen XZ4AFB0 (Daniel Iftime) und XZ49D1A (Norman Liebich).
+
+Die Anträge sind auf diese Unterlagen und die Entscheidungen des Antragstellers
+begrenzt. Es erfolgten keine Live-Prüfung von Azure/ServiceNow, keine Bestellung
+und keine Änderung an Repositories oder Cloud-Ressourcen.
