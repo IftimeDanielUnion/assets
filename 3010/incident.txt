@@ -1,4 +1,13 @@
-az rest --method get \
+➜  ui-mb-infrastructure git:(main) az rest --method get \                                                                                                         
   --url "https://management.azure.com/subscriptions/a6c520e0-a1af-4c4c-82f0-8482ff82ecd8/resourceGroups/rg-mb-prod-bff-api/providers/Microsoft.Web/sites/func-mb-prod-bff-api-gkweznzx/config/configreferences/appsettings?api-version=2025-03-01" \
   --query "value[].{Setting:name,Status:properties.status,Details:properties.details}" \
   -o table
+Setting                             Status    Details
+----------------------------------  --------  -----------------------------------------
+API_PRODUCTHUB_LOGIN_CLIENT_ID      Resolved  Reference has been successfully resolved.
+API_PRODUCTHUB_LOGIN_CLIENT_SECRET  Resolved  Reference has been successfully resolved.
+API_PRODUCTHUB_LOGIN_SCOPE          Resolved  Reference has been successfully resolved.
+APIM_SCOPE                          Resolved  Reference has been successfully resolved.
+APIM_CLIENT_ID                      Resolved  Reference has been successfully resolved.
+APIM_CLIENT_SECRET                  Resolved  Reference has been successfully resolved.
+➜  ui-mb-infrastructure git:(main)  
