@@ -1,1 +1,20 @@
+az functionapp show \
+  -n func-mb-prod-bff-api-gkweznzx \
+  -g rg-mb-prod-bff-api \
+  --subscription a6c520e0-a1af-4c4c-82f0-8482ff82ecd8 \
+  --query "{keyVaultReferenceIdentity:keyVaultReferenceIdentity,identityType:identity.type}" \
+  -o json
 
+
+
+az functionapp update \
+  -n func-mb-prod-bff-api-gkweznzx \
+  -g rg-mb-prod-bff-api \
+  --subscription a6c520e0-a1af-4c4c-82f0-8482ff82ecd8 \
+  --set keyVaultReferenceIdentity=SystemAssigned
+
+az functionapp update \
+  -n func-mb-prod-bff-api-gkweznzx \
+  -g rg-mb-prod-bff-api \
+  --subscription a6c520e0-a1af-4c4c-82f0-8482ff82ecd8 \
+  --set keyVaultReferenceIdentity=/subscriptions/a6c520e0-a1af-4c4c-82f0-8482ff82ecd8/resourceGroups/rg-mb-prod-bff-identity/providers/Microsoft.ManagedIdentity/userAssignedIdentities/uai-mb-prod-bff-identity-u2y27abs
